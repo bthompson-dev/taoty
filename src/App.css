@@ -1,38 +1,153 @@
-.App {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: 8rem 1fr;
+}
+
+.header {
+  background-color: black;
+  grid-column: 1/-1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+.sidebar {
+  grid-column: 1/2;
+  grid-row: 2/-1;
+  height: 100%;
+}
+.sidebar__form {
+  background-color: #a7c4e3;
+  padding: 2rem;
+  padding-top: 4rem;
+  font-size: 2rem;
+  margin-top: 5rem;
+  margin-left: 2rem;
+  border-radius: 10%;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar__form--select {
+  margin-top: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.results {
+  grid-row: 2/-1;
+  grid-column: 2/-1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.results__title {
+  font-size: 2.5rem;
+}
+.results__grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5vh;
+  padding: 5vh;
+}
+.results__title {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+.results__album {
+  width: 18vw;
+  transition: transform 0.75s;
+}
+.results__album--primary-container {
+  width: 100%;
+}
+.results__album--img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.results__album--text {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.results__album--text .title {
+  font-style: italic;
+}
+.results__album--extra-info {
+  display: none;
+  opacity: 0;
+  transition: all 3s;
+}
+.results__album--extra-info td {
+  padding: 1.5rem 1rem;
+}
+.results__album--extra-info .description {
+  padding: 1rem;
+}
+.results__album:hover {
+  transform: translateY(-0.5rem);
+}
+.results__album.selected {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  order: -1;
+}
+.results__album.selected .info--close {
+  position: absolute;
+  top: -2rem;
+  right: 2rem;
+  font-size: 4.5rem;
+  color: #b8b4b4;
+  transition: all 1s;
+}
+.results__album.selected .info--close:hover {
+  color: #4e4c4c;
+  cursor: pointer;
+}
+.results__album.selected .results__album--primary-container {
+  width: 50%;
+  padding: 0 10%;
+}
+.results__album.selected .results__album--img {
+  height: 28vw;
+  width: 28vw;
+  transition: all 3s;
+}
+.results__album.selected .results__album--text {
+  font-size: 2rem;
+  padding: 1.5rem 1rem;
+}
+.results__album.selected .results__album--extra-info {
+  width: 50%;
+  padding-right: 4rem;
+  display: inline-block;
+  font-size: 1.6rem;
+  animation: FadeInLeft 3s;
+  animation-fill-mode: forwards;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes FadeInLeft {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */

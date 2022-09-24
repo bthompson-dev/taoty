@@ -1,0 +1,194 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: 8rem 1fr;
+}
+
+.header {
+  background-color: black;
+  grid-column: 1 / -1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+// Sidebar
+
+.sidebar {
+  
+  grid-column: 1 / 2;
+  grid-row: 2 / -1;
+  height: 100%;
+
+
+  &__form {
+    background-color: #a7c4e3;
+    padding: 2rem;
+    padding-top: 4rem;
+    font-size: 2rem;
+    margin-top: 5rem;
+    margin-left: 2rem;
+    border-radius: 10%;
+    text-align: center;    
+
+    &--select {
+      margin-top: 2rem;
+    }
+  }
+
+}
+
+// Album results grid
+
+.results {
+  grid-row: 2 / -1;
+  grid-column: 2 / -1;
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5vh;
+    padding: 5vh;
+  }
+
+  &__title {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  // Album class
+
+  &__album {
+    width: clamp(10vw, 18vw, 25vw);
+    transition: transform 0.75s;
+
+    &--primary-container {
+      width: 100%;
+    }
+
+    &--img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &--text {
+      padding: 1rem;
+      font-size: 1.5rem;
+
+      & .title {
+        font-style: italic;
+      }
+    }
+
+    &--extra-info {
+      display: none;
+      opacity: 0;
+      transition: all 3s;
+
+      td {
+        padding: 1.5rem 1rem;
+      }
+
+      .description {
+        padding: 1rem;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-0.5rem);
+    }
+
+// Selected Album
+
+    &.selected {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      order: -1;
+
+      .info--close {
+        position: absolute;
+        top: -2rem;
+        right: 2rem;
+        font-size: 4.5rem;
+        color: #b8b4b4;
+        transition: all 1s;
+
+        &:hover {
+          color: #4e4c4c;
+          cursor: pointer;
+        }
+      }
+
+
+      .results {
+        &__album {
+
+          &--primary-container {
+            width: 50%;
+            padding: 0 10%;
+          }
+
+          &--img {
+            height: 28vw;
+            width: 28vw;
+            transition: all 3s;
+          }
+
+          &--text {
+            font-size: 2rem;
+            padding: 1.5rem 1rem;
+          }
+
+          &--extra-info {
+            width: 50%;
+            padding-right: 4rem;
+            display: inline-block;
+            font-size: 1.6rem;
+            animation: FadeInLeft 3s;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Animations
+
+@keyframes FadeInLeft {
+  0% {
+    opacity: 0;
+    
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
