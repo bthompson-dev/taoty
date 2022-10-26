@@ -1,0 +1,234 @@
+[
+  {
+    "title": "Collapsed in Sunbeams",
+    "artist": "Arlo Parks",
+    "genre": "Bedroom Pop / Neo-Soul",
+    "nationality": "UK",
+    "description": "Arlo Parks has had quite a start to her music career. Just 21 years old, from Hammersmith, London, she has achieved commercial and critical success with her debut album Collapsed in Sunbeams, winning the Mercury Prize and now securing a nomination for the prestigious Thompson award. With gentle, laid-back pop melodies, soulful vocals and jazzy rhythms, this is an album that soothes the listener, even while it addresses darker themes of depression, prejudice, anxiety and trauma. Parks’ lyrics are intimate and conversational, painting complex emotional scenes with delicately chosen words that still sound as though they're directed to a close friend. Collapsed in Sunbeams opens the curtains and lets the light in, offering empathy and support for those who may be struggling.",
+    "image": "./img/arlo_parks.jpg",
+    "year": 2021,
+    "winner": false
+  },
+  {
+    "title": "For the First Time",
+    "artist": "Black Country, New Road",
+    "genre": "Post-rock / Experimental Rock",
+    "nationality": "UK",
+    "description": "For the First Time is the debut album of Black Country, New Road – a seven-piece band who are part of a new wave of fearlessly experimental groups from South London. Combining the sounds of post-punk, art rock, free jazz and Jewish Klezmer music, they build atmospheric, carnivalesque soundscapes that grow to glorious cacophony. Above it all, frontman Isaac Wood’s sardonic, snarling vocals move from manic arrogance to wounded introspection, pulling together strange narratives that match the bristling tension of the music.",
+    "image": "./img/black_country.jpg",
+    "year": 2021,
+    "winner": false
+  },
+  {
+    "title": "Promises",
+    "artist": "Floating Points, Pharoah Sanders & The London Symphony Orchestra",
+    "genre": "Post-minimalism / Third Stream",
+    "nationality": "UK / USA",
+    "description": "Promises is a collaboration between Sam Shepherd (aka Floating Points), a Manchester-based electronic musician, and Pharoah Sanders, the legendary American free jazz saxophonist who is now over 80 years old. Built around a simple, looping 7-note motif that persists through the nine movements of the piece, the music seems to breathe and evolve, erupting into orchestral surges only to soften and retreat into hushed electronic tones and textures. Sanders’ saxophone is fluid, powerful and graceful, feeling its way through the ambient universe around him. A subtle, transcendent exploration of sound.",
+    "image": "./img/floating_points.jpg",
+    "year": 2021,
+    "winner": true
+  },
+  {
+    "title": "Jubilee",
+    "artist": "Japanese Breakfast",
+    "genre": "Indie Pop / Chamber Pop",
+    "nationality": "USA",
+    "description": "Jubilee is the third album by Japanese Breakfast, a band led by Korean-American musician, author and director Michelle Zauner. After two albums and a best-selling memoir focused on her grief after her mother’s death, she wanted to write about joy. The result is a new-found exuberance, her dreamy pop sounds expanded with eclectic arrangements of horns, strings and synthesizers. However, the catchy, blissful instrumentation is not always matched by the lyrics, which delve into darker, more sophisticated metaphors and emotions.",
+    "image": "./img/japanese_breakfast.jpg",
+    "year": 2021,
+    "winner": false
+  },
+  {
+    "title": "Sometimes I Might Be Introvert",
+    "artist": "Little Simz",
+    "genre": "Conscious Hip Hop",
+    "nationality": "UK",
+    "description": "Fresh from making history as the first black woman to headline three super-spreader nights at Brixton Academy, it’s Little Simz, with her 4th studio album, Sometimes I Might Be Introvert. A cinematically crafted narrative of growth and self-definition, it marks a triumphant evolution. She’s built out her sound, incorporating an eclectic mix of R&B, soul, Afrobeat and grime, topped with huge orchestral flourishes, a gospel choir, and even a narrator (voiced by The Crown’s Emma Corrin). Over the course of the album, she explores the contradiction between seeking the validation of commercial success while remaining a private person who struggles inwardly with self-doubt. An introvert with one of the most self-affirming, colourful and ambitious albums of the year.",
+    "image": "./img/little_simz.jpg",
+    "year": 2021,
+    "winner": false
+  },
+  {
+    "title": "Glow On",
+    "artist": "Turnstile",
+    "genre": "Post-Hardcore / Alternative Rock",
+    "nationality": "USA",
+    "description": "Turnstile, a band from Baltimore, Maryland, take the aggressive, thrashing sounds of hardcore punk and blend them with a dreamy mix of genres. With Glow On, their third studio album, they seem to have perfected the formula, preserving the passionate, head-banging energy of punk while expanding into indie, pop, psychedelia and R&B. The short, punchy tracks offer killer guitar riffs, anthemic choruses and non-stop entertainment.",
+    "image": "./img/turnstile.jpg",
+    "year": 2021,
+    "winner": false
+  },
+  {
+    "title": "Call Me If You Get Lost",
+    "artist": "Tyler, the Creator",
+    "genre": "West Coast Hip Hop",
+    "nationality": "USA",
+    "description": "On Call Me If You Get Lost, his 3rd consecutive nomination for the TAOTYs, Tyler, the Creator takes on a new persona – that of Tyler Baudelaire, a lavish spender touring the world in private jets, boats and Rolls-Royces. The decadence of this character sets the tone for the album, which sprawls luxuriously, pushing at the boundaries of his music. Rich, sun-soaked production, built on samples of synthpop, soul, reggae and jazz, is juxtaposed with a return to the heavier, harsher rap of his early material. This variety gives him the freedom to interrogate the messy extremes of his experience, from wild excesses to raw, tender feeling. Tyler’s talent for reinvention makes this a record worth losing yourself in.",
+    "image": "./img/tyler.jpg",
+    "year": 2021,
+    "winner": false
+  },
+  {
+    "title": "Ignorance",
+    "artist": "The Weather Station",
+    "genre": "Art Pop",
+    "nationality": "Canada",
+    "description": "Canadian artist Tamara Lindeman has been making music with her band The Weather Station since 2006. While she grew up with a love of nature, it was only in recent years that the ever-worsening headlines and reports on the climate crisis prompted her to confront the reality of what is happening around us. Her resultant fear and sorrow is poured into the album Ignorance, which finds a way to process her feelings of helplessness as a kind of grief or heartbreak. Backed by lush, delicate folk-pop arrangements, she sings of small moments of epiphany and realisation, acknowledging the emotional weight of humanity’s ongoing breakup with nature.",
+    "image": "./img/weather_station.jpg",
+    "year": 2021,
+    "winner": false
+  },
+  {
+    "title": "Rough and Rowdy Ways",
+    "artist": "Bob Dylan",
+    "genre": "Americana",
+    "nationality": "USA",
+    "description": "At the age of 79, Bob Dylan is not afraid to confront his own mortality; death hovers behind most of the songs on Rough and Rowdy Ways, his 39th studio album. It’s a reflective, understated record, with sensitive blues and folk arrangements backing his expressive, growling vocals. As ever, the lyrics are fundamental to Dylan’s work. Here, they are expansive in their scope, surveying the history he has lived through and the mythology that surrounds him with a wry eloquence. The references that he weaves throughout, to music, literature, and art, strengthen his connection with the past; the music becomes an elegy for the culture Dylan has helped to shape.",
+    "image": "./img/bob_dylan.jpg",
+    "year": 2020,
+    "winner": false
+  },
+  {
+    "title": "Future Nostalgia",
+    "artist": "Dua Lipa",
+    "genre": "Dance Pop/Nu-Disco",
+    "nationality": "UK",
+    "description": "For her 2nd album, London-based singer-songwriter Dua Lipa wanted to create a “nostalgic” sound that fused the best of retro pop & disco with glossy modern-day production. The result is Future Nostalgia, a record that offers a life-giving injection of energy in a year when dancefloors have been empty and silent. It’s a commanding statement of pop dominance which has been a well-deserved commercial and critical hit.",
+    "image": "./img/dua_lipa.jpg",
+    "year": 2020,
+    "winner": false
+  },
+  {
+    "title": "Fetch the Bolt Cutters",
+    "artist": "Fiona Apple",
+    "genre": "Art Pop/Progressive Pop",
+    "nationality": "USA",
+    "description": "Born in New York, Fiona Apple has been making music for over 25 years. Fetch the Bolt Cutters is her 5th album, and one which encompasses a life’s experience. Over time, her music has grown wilder, discarding conventional song structures for an uncompromising, disruptive form that is completely her own. This experimental freedom also signals her central theme: finding freedom from male oppression. Moments of shattering fury are balanced by warmth and tenderness, as the honesty, wit and compassion of Apple’s lyrics shine through. Eccentric, raw, and irrepressible, Fetch the Bolt Cutters refuses to conform or be caged.",
+    "image": "./img/fiona_apple.jpg",
+    "year": 2020,
+    "winner": true
+  },
+  {
+    "title": "Shore",
+    "artist": "Fleet Foxes",
+    "genre": "Indie Folk/Chamber Pop",
+    "nationality": "USA",
+    "description": "No need for introductions here – Fleet Foxes are veterans of the Album of the Year competition, with two previous nominations in 2008 and 2011. They’re back with Shore, their fourth album, released at the precise time and date of the autumnal equinox, underscoring the deep connection to nature in their music. It’s a warm, joyful record, a soothing escape from months of indoor confinement and social distancing, under which conditions the lyrics were composed. Shore subtly expands the band’s sound, with the trademark soaring vocal harmonies blending with samples and unusual instrumental details. In a more than usually stress-inducing year, Shore taps into the timeless beauty of nature to remind us that this too will pass.",
+    "image": "./img/fleet_foxes_shore.jpg",
+    "year": 2020,
+    "winner": false
+  },
+  {
+    "title": "Set My Heart on Fire Immediately",
+    "artist": "Perfume Genius",
+    "genre": "Art Pop",
+    "nationality": "USA",
+    "description": "On his 5th record, Mike Hadreas, a.k.a. Perfume Genius, continues his interrogation of identity and physical vulnerability. Growing up in Seattle, he was bullied and physically attacked for being gay; he has also suffered from substance addiction and chronic illness. As with a number of the artists on our list, he harnesses dissonant sounds and genres to form a unique sound, shifting from shimmering pop melodies to ghostly ambient backdrops. Set My Heart on Fire Immediately embraces fragility to find a new confidence in the face of life’s uncertainty.",
+    "image": "./img/perfume_genius.jpg",
+    "year": 2020,
+    "winner": false
+  },
+  {
+    "title": "Punisher",
+    "artist": "Phoebe Bridgers",
+    "genre": "Indie Folk",
+    "nationality": "USA",
+    "description": "Punisher is the second record from Californian singer-songwriter Phoebe Bridgers.  The mood of the album is accurately evoked by the artwork, depicting Bridgers (wearing a Halloween skeleton outfit) alone in a dark, desolate landscape, looking up at the stars. Darkness looms throughout the songs on Punisher, which deal with themes including depression, decaying relationships and the apocalypse. Each song conjures a unique world, with humming indie rock soundscapes and arresting, self-aware lyrics that capture fleeting moments and moods. Through its emotional candour, Punisher offers a bittersweet sense of hope against the weight of modern anxiety.",
+    "image": "./img/phoebe_bridgers.jpg",
+    "year": 2020,
+    "winner": false
+  },
+  {
+    "title": "RTJ4",
+    "artist": "Run the Jewels",
+    "genre": "Hardcore Hip Hop/Political Hip Hop",
+    "nationality": "USA",
+    "description": "Run the Jewels are an American hip hop supergroup duo, made up of Brooklyn-based rapper/producer El-P, and Atlanta-based rapper Killer Mike. They’ve been producing albums together since 2013, honing their distinctive brand of brash, high-octane political hip hop. Although recorded beforehand, RTJ4 was released in the direct aftermath of the Black Lives Matter protests after the killing of George Floyd. It shares the same anger towards police racism and brutality in America, but also analyses the cultural and societal forces that perpetuate it. Abrasive, funny, and anthemic, RTJ4 pulls no punches in its call for revolution.",
+    "image": "./img/run_the_jewels.jpg",
+    "year": 2020,
+    "winner": false
+  },
+  {
+    "title": "Untitled (Rise)",
+    "artist": "Sault",
+    "genre": "Neo-Soul",
+    "nationality": "UK",
+    "description": "Very little is known about Sault, a UK-based collective whose members have remained anonymous since they started to release music in 2019. They do seem to have some links in the industry, however, having collaborated with the producer Inflo (who worked on Little Simz’ Grey Area), and Michael Kiwanuka. Their work is heavily focused on black issues, and they were clearly galvanised by the Black Lives Matter protests this year, releasing two albums in the space of 12 weeks. Both felt like direct responses to the global outpouring of feeling and frustration, but with markedly different approaches. While the first album was characterised by anger and sorrow, the sequel, Untitled (Rise), emphasises hope, renewal and empowerment. Blending the sounds of R&B, soul, disco and Afrobeat, Sault soundtrack the defiant call for liberation and equality from black voices around the world.",
+    "image": "./img/sault.jpg",
+    "year": 2020,
+    "winner": false
+  },
+  {
+    "title": "All Mirrors",
+    "artist": "Angel Olsen",
+    "genre": "Art Pop/Chamber Pop",
+    "nationality": "USA",
+    "image": "./img/angel_olsen.jpg",
+    "year": 2019,
+    "winner": false
+  },
+  {
+    "title": "Magdalene",
+    "artist": "FKA twigs",
+    "genre": "Art Pop/Glitch Pop",
+    "nationality": "UK",
+    "image": "./img/fka_twigs_magdalene.jpg",
+    "year": 2019,
+    "winner": true
+  },
+  {
+    "title": "Norman Fucking Rockwell!",
+    "artist": "Lana Del Rey",
+    "genre": "Art Pop",
+    "nationality": "USA",
+    "image": "./img/lana_del_rey.jpg",
+    "year": 2019,
+    "winner": false
+  },
+  {
+    "title": "Grey Area",
+    "artist": "Little Simz",
+    "genre": "Conscious Hip Hop",
+    "nationality": "UK",
+    "image": "./img/little_simz_grey_area.jpg",
+    "year": 2019,
+    "winner": false
+  },
+  {
+    "title": "Kiwanuka",
+    "artist": "Michael Kiwanuka",
+    "genre": "Psychedelic Soul",
+    "nationality": "UK",
+    "image": "./img/michael_kiwanuka.jpg",
+    "year": 2019,
+    "winner": false
+  },
+  {
+    "title": "Ghosteen",
+    "artist": "Nick Cave & The Bad Seeds",
+    "genre": "Ambient Pop",
+    "nationality": "UK",
+    "image": "./img/nick_cave_ghosteen.jpg",
+    "year": 2019,
+    "winner": false
+  },
+  {
+    "title": "Igor",
+    "artist": "Tyler, the Creator",
+    "genre": "Neo-Soul",
+    "nationality": "USA",
+    "image": "./img/tyler_igor.jpg",
+    "year": 2019,
+    "winner": false
+  },
+  {
+    "title": "Titanic Rising",
+    "artist": "Weyes Blood",
+    "genre": "Baroque Pop/Art Pop",
+    "nationality": "USA",
+    "image": "./img/weyes_blood.jpg",
+    "year": 2019,
+    "winner": false
+  }
+]

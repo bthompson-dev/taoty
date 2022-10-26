@@ -31,9 +31,9 @@ const Album = ({ album, select, deselect }) => {
               <td>Nationality:</td>
               <td>{album.nationality}</td>
             </tr>
-            <tr>
+            {album.description && <tr>
               <td>Description:</td>
-            </tr>
+            </tr>}
           </tbody>
         </table>
 
