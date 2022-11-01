@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 const Album = ({ album, select, deselect }) => {
   return (
     <div className="results__album">
@@ -24,20 +26,30 @@ const Album = ({ album, select, deselect }) => {
         <table>
           <tbody>
             <tr>
-              <td>Genre:</td>
+              <td className="table--title">Release Date:</td>
+              <td>{moment(album.release_date).format("Do MMMM YYYY")}</td>
+            </tr>
+            <tr>
+              <td className="table--title">Genre:</td>
               <td>{album.genre}</td>
             </tr>
             <tr>
-              <td>Nationality:</td>
+              <td className="table--title">Nationality:</td>
               <td>{album.nationality}</td>
             </tr>
-            {album.description && <tr>
-              <td>Description:</td>
-            </tr>}
+
+            {album.description && (
+              <tr>
+                <td className="table--title">Description:</td>
+              </tr>
+            )}
           </tbody>
         </table>
 
         <p className="description">{album.description}</p>
+        {album.winner && (
+          <p className="winner"> Thompson Album of the Year {album.year}</p>
+        )}
       </div>
     </div>
   );

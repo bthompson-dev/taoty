@@ -24,7 +24,7 @@ html {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 4rem;
   font-size: 1.5rem;
 }
@@ -92,7 +92,7 @@ html {
   transition: all 3s;
 }
 .results__album--extra-info td {
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1.5rem;
 }
 .results__album--extra-info .description {
   padding: 1rem;
@@ -138,6 +138,10 @@ html {
   font-size: 1.6rem;
   animation: FadeInLeft 3s;
   animation-fill-mode: forwards;
+}
+.results__album.selected .results__album--extra-info .table--title {
+  font-weight: 150;
+  font-size: 1.8rem;
 }
 
 @keyframes FadeInLeft {
