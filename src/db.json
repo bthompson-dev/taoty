@@ -462,5 +462,93 @@
     "year": 2017,
     "release_date": { "$date": "2017-09-01" },
     "winner": false
+  },
+  {
+    "title": "Malibu",
+    "artist": "Anderson .Paak",
+    "genre": "Neo-Soul",
+    "primary_genres": ["Soul"],
+    "nationality": "USA",
+    "image": "./img/anderson_paak.jpg",
+    "year": 2016,
+    "release_date": { "$date": "2016-01-15" },
+    "winner": false
+  },
+  {
+    "title": "Teens of Denial",
+    "artist": "Car Seat Headrest",
+    "genre": "Indie Rock",
+    "primary_genres": ["Rock"],
+    "nationality": "USA",
+    "image": "./img/car_seat_headrest.jpg",
+    "year": 2016,
+    "release_date": { "$date": "2016-05-20" },
+    "winner": false
+  },
+  {
+    "title": "Blackstar",
+    "artist": "David Bowie",
+    "genre": "Art Rock",
+    "primary_genres": ["Rock"],
+    "nationality": "UK",
+    "image": "./img/david_bowie_blackstar.png",
+    "year": 2016,
+    "release_date": { "$date": "2016-01-08" },
+    "winner": true
+  },
+  {
+    "title": "Blonde",
+    "artist": "Frank Ocean",
+    "genre": "Alternative R&B / Art Pop",
+    "primary_genres": ["R&B", "Pop"],
+    "nationality": "USA",
+    "image": "./img/frank_ocean_blonde.jpg",
+    "year": 2016,
+    "release_date": { "$date": "2016-08-20" },
+    "winner": false
+  },
+  {
+    "title": "Post Pop Depression",
+    "artist": "Iggy Pop",
+    "genre": "Alternative Rock",
+    "primary_genres": ["Rock"],
+    "nationality": "USA",
+    "image": "./img/iggy_pop.jpg",
+    "year": 2016,
+    "release_date": { "$date": "2016-03-18" },
+    "winner": false
+  },
+  {
+    "title": "Skeleton Tree",
+    "artist": "Nick Cave & The Bad Seeds",
+    "genre": "Art Rock",
+    "primary_genres": ["Rock"],
+    "nationality": "UK",
+    "image": "./img/nick_cave_skeleton_tree.jpg",
+    "year": 2016,
+    "release_date": { "$date": "2016-09-09" },
+    "winner": false
+  },
+  {
+    "title": "A Seat at the Table",
+    "artist": "Solange",
+    "genre": "Neo-Soul",
+    "primary_genres": ["Soul"],
+    "nationality": "USA",
+    "image": "./img/solange.jpg",
+    "year": 2016,
+    "release_date": { "$date": "2016-09-30" },
+    "winner": false
+  },
+  {
+    "title": "A Moon Shaped Pool",
+    "artist": "Radiohead",
+    "genre": "Art Pop / Art Rock",
+    "primary_genres": ["Pop", "Rock"],
+    "nationality": "UK",
+    "image": "./img/radiohead_moon_shaped_pool.jpg",
+    "year": 2016,
+    "release_date": { "$date": "2016-05-08" },
+    "winner": false
   }
 ]
