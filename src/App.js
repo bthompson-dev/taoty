@@ -1,12 +1,25 @@
 import "./App.css";
 import AlbumList from "./AlbumList";
 import { useEffect, useState } from "react";
-import getAll from "./services/albums";
+import { getAll, getKeys } from "./services/albums";
 
 function App() {
   const [albums, setAlbums] = useState(null);
+  const [genres, setGenres] = useState(null);
   const [selectedYear, setSelectedYear] = useState("all");
   const [showWinners, setShowWinners] = useState("false");
+  const [selectedGenre, setSelectedGenre] = useState("all");
+  
+
+  // Get list of primary genres from the database
+
+  useEffect(() => {
+    getKeys().then((result) => {
+      setGenres(result);
+    });
+  }, []);
+
+  // Get albums from database using search
 
   useEffect(() => {
     let searchObj = {};
@@ -16,8 +29,11 @@ function App() {
     }
 
     if (showWinners === "true") {
-      console.log("fired");
       searchObj.winner = true;
+    }
+
+    if (selectedGenre !== "all") {
+      searchObj.genre = selectedGenre;
     }
 
     getAll(searchObj)
@@ -27,7 +43,9 @@ function App() {
       .catch((error) => {
         console.log(error.message);
       });
-  }, [selectedYear, showWinners]);
+  }, [selectedYear, showWinners, selectedGenre]);
+
+  // Functions to select and deselect albums
 
   const select = (event) => {
     const album = event.target.parentElement.parentElement.parentElement;
@@ -87,6 +105,27 @@ function App() {
             >
               <option value="true">Winners only</option>
               <option value="false">All albums</option>
+            </select>
+          </form>
+
+          <form className="sidebar__form">
+            <label htmlFor="genre">Genre:</label> <br></br>
+            <select
+              name="genre"
+              id="genre"
+              className="sidebar__form--select"
+              value={selectedGenre}
+              onChange={(event) => setSelectedGenre(event.target.value)}
+            >
+              {genres &&
+                genres.map((genre) => {
+                  return (
+                    <option value={genre} key={genre}>
+                      {genre}
+                    </option>
+                  );
+                })}
+              <option value="all">All Genres</option>
             </select>
           </form>
         </div>

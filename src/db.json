@@ -367,7 +367,7 @@
     "title": "Your Queen Is a Reptile",
     "artist": "Sons of Kemet",
     "genre": "Afro-Jazz",
-    "primary_genres": ["Jazz", "African Music"],
+    "primary_genres": ["Jazz"],
     "nationality": "UK",
     "image": "./img/sons_of_kemet.jpg",
     "description": "Hailing from London, it’s the Afro-jazz group Sons of Kemet with their album Your Queen is a Reptile. Lead saxophonist Shabaka Hutchings has become a key figure in the UK Jazz scene, fronting a number of bands that are shaking up the tired, fusty image of jazz with an exciting new fusion of musical influences, from Caribbean folk to dub and Afrobeat. Each track on Sons of Kemet’s third album is dedicated to an influential black woman from history, from Hutchings’ own great grandmother to political activists and leaders such as Harriet Tubman and Nanny of the Maroons. By crowning this new lineage of alternative ‘Queens’, Sons of Kemet celebrate female black identity at the same time as challenging the legacy of the British monarchy, and exposing the lizard-like qualities of dear old Elizabeth.",
@@ -549,6 +549,94 @@
     "image": "./img/radiohead_moon_shaped_pool.jpg",
     "year": 2016,
     "release_date": { "$date": "2016-05-08" },
+    "winner": false
+  },
+  {
+    "title": "Vulnicura",
+    "artist": "Björk",
+    "genre": "Art Pop",
+    "primary_genres": ["Pop"],
+    "nationality": "Iceland",
+    "image": "./img/bjork.jpg",
+    "year": 2015,
+    "release_date": { "$date": "2015-01-20" },
+    "winner": false
+  },
+  {
+    "title": "Sometimes I Sit and Think, and Sometimes I Just Sit",
+    "artist": "Courtney Barnett",
+    "genre": "Indie Rock / Slacker Rock",
+    "primary_genres": ["Rock"],
+    "nationality": "Australia",
+    "image": "./img/courtney_barnett.jpg",
+    "year": 2015,
+    "release_date": { "$date": "2015-03-24" },
+    "winner": false
+  },
+  {
+    "title": "I Love You, Honeybear",
+    "artist": "Father John Misty",
+    "genre": "Indie Folk",
+    "primary_genres": ["Folk"],
+    "nationality": "USA",
+    "image": "./img/father_john_misty.jpg",
+    "year": 2015,
+    "release_date": { "$date": "2015-02-10" },
+    "winner": false
+  },
+  {
+    "title": "In Colour",
+    "artist": "Jamie xx",
+    "genre": "UK Bass",
+    "primary_genres": ["Electronic", "Dance"],
+    "nationality": "UK",
+    "image": "./img/jamie_xx.jpg",
+    "year": 2015,
+    "release_date": { "$date": "2015-06-01" },
+    "winner": false
+  },
+  {
+    "title": "Have You in My Wilderness",
+    "artist": "Julia Holter",
+    "genre": "Art Pop / Chamber Pop",
+    "primary_genres": ["Pop"],
+    "nationality": "USA",
+    "image": "./img/julia_holter.jpg",
+    "year": 2015,
+    "release_date": { "$date": "2015-09-25" },
+    "winner": false
+  },
+  {
+    "title": "To Pimp a Butterfly",
+    "artist": "Kendrick Lamar",
+    "genre": "Conscious Hip Hop / West Coast Hip Hop",
+    "primary_genres": ["Hip Hop"],
+    "nationality": "USA",
+    "image": "./img/kendrick_lamar_to_pimp_a_butterfly.jpg",
+    "year": 2015,
+    "release_date": { "$date": "2015-03-15" },
+    "winner": false
+  },
+  {
+    "title": "Carrie & Lowell",
+    "artist": "Sufjan Stevens",
+    "genre": "Indie Folk",
+    "primary_genres": ["Folk"],
+    "nationality": "USA",
+    "image": "./img/sufjan_stevens.webp",
+    "year": 2015,
+    "release_date": { "$date": "2015-03-31" },
+    "winner": true
+  },
+  {
+    "title": "Currents",
+    "artist": "Tame Impala",
+    "genre": "Psychedelic Pop / Synthpop",
+    "primary_genres": ["Pop", "Psychedelia"],
+    "nationality": "Australia",
+    "image": "./img/tame_impala_currents.jpg",
+    "year": 2015,
+    "release_date": { "$date": "2015-07-17" },
     "winner": false
   }
 ]

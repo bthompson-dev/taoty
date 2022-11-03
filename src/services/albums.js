@@ -7,4 +7,9 @@ const getAll = (headers) => {
     return request.then(response => response.data)
 }
 
-export default getAll;
+const getKeys = () => {
+    return axios.get(baseUrl + '/keys')
+    .then(response => response.data)
+}
+
+export {getAll, getKeys} ;
