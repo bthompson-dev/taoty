@@ -66,7 +66,7 @@ function App() {
         </div>
 
         <div className="sidebar">
-          <form className="sidebar__form">
+          <form className="sidebar__form year">
             <label htmlFor="year">Year</label> <br></br>
             <select
               name="year"
@@ -94,7 +94,7 @@ function App() {
             </select>
           </form>
 
-          <form className="sidebar__form">
+          <form className="sidebar__form winners">
             <label htmlFor="winners">Winners</label> <br></br>
             <select
               name="winners"
@@ -104,12 +104,12 @@ function App() {
               onChange={(event) => setShowWinners(event.target.value)}
             >
               <option value="true">Winners only</option>
-              <option value="false">All albums</option>
+              <option value="false">All Albums</option>
             </select>
           </form>
 
-          <form className="sidebar__form">
-            <label htmlFor="genre">Genre:</label> <br></br>
+          <form className="sidebar__form genre">
+            <label htmlFor="genre">Genre</label> <br></br>
             <select
               name="genre"
               id="genre"

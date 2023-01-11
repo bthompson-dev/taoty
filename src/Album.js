@@ -14,8 +14,10 @@ const Album = ({ album, select, deselect }) => {
         </div>
 
         <div className="results__album--text">
-          <p className="title">{album.title}</p>
+          <p className="title">{album.title}
+          </p>
           <p className="artist">{album.artist}</p>
+          
         </div>
       </div>
 
@@ -48,7 +50,13 @@ const Album = ({ album, select, deselect }) => {
 
         <p className="description">{album.description}</p>
         {album.winner && (
-          <p className="winner"> Thompson Album of the Year {album.year}</p>
+          <p className="winner"> 
+            <img src="./img/trophy.png" className="trophy" alt="Trophy"></img>
+            <span className="firework-1"></span>
+            <span className="firework-2"></span>
+            <span className="firework-3"></span>
+            Thompson Album of the Year {album.year}
+          <img src="./img/trophy.png" className="trophy" alt="Trophy"></img></p>
         )}
       </div>
     </div>

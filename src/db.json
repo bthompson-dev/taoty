@@ -27,7 +27,7 @@
     "title": "Promises",
     "artist": "Floating Points, Pharoah Sanders & The London Symphony Orchestra",
     "genre": "Post-minimalism / Third Stream",
-    "primary_genres": ["Classical Music", "Jazz"],
+    "primary_genres": ["Classical", "Jazz"],
     "nationality": "UK / USA",
     "description": "Promises is a collaboration between Sam Shepherd (aka Floating Points), a Manchester-based electronic musician, and Pharoah Sanders, the legendary American free jazz saxophonist who is now over 80 years old. Built around a simple, looping 7-note motif that persists through the nine movements of the piece, the music seems to breathe and evolve, erupting into orchestral surges only to soften and retreat into hushed electronic tones and textures. Sanders’ saxophone is fluid, powerful and graceful, feeling its way through the ambient universe around him. A subtle, transcendent exploration of sound.",
     "image": "./img/floating_points.jpg",
@@ -491,7 +491,7 @@
     "genre": "Art Rock",
     "primary_genres": ["Rock"],
     "nationality": "UK",
-    "image": "./img/david_bowie_blackstar.png",
+    "image": "./img/david_bowie_blackstar.jpg",
     "year": 2016,
     "release_date": { "$date": "2016-01-08" },
     "winner": true
