@@ -1,6 +1,6 @@
 import "./App.css";
 import AlbumList from "./AlbumList";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { getAll, getKeys } from "./services/albums";
 
 function App() {
@@ -9,7 +9,9 @@ function App() {
   const [selectedYear, setSelectedYear] = useState("all");
   const [showWinners, setShowWinners] = useState("false");
   const [selectedGenre, setSelectedGenre] = useState("all");
-  
+
+  const sidebar = useRef(null);
+
 
   // Get list of primary genres from the database
 
@@ -58,14 +60,66 @@ function App() {
     album.classList.remove("selected");
   };
 
+  // Function to create title
+
+  const makeTitle = () => {
+    let title = "All Albums";
+
+    if (selectedYear !== "all") {
+      if (selectedGenre !== "all") {
+        if (showWinners !== "false") {
+          title = `${selectedGenre} Winner of ${selectedYear}`;
+        } else {
+          title = `${selectedGenre} Albums of ${selectedYear}`;
+        }
+      } else {
+        if (showWinners !== "false") {
+          title = `Winner of ${selectedYear}`;
+        } else {
+          title = `Albums of ${selectedYear}`;
+        }
+      }
+    } else {
+      if (selectedGenre !== "all") {
+        if (showWinners !== "false") {
+          title = `${selectedGenre} Winners`;
+        } else {
+          title = `${selectedGenre} Albums`;
+        }
+      } else {
+        if (showWinners !== "false") {
+          title = `Winners`;
+        }
+      }
+    }
+
+    return title;
+  };
+
+  // Reset button
+
+  const reset = () => {
+    setSelectedYear('all');
+    setShowWinners('false');
+    setSelectedGenre('all');
+  }
+
+  // Menu button
+
+  const showMenu = () => {
+    sidebar.current.classList.toggle('visible');
+  }  
+
   return (
     <>
       <div className="container">
         <div className="header">
+          <img className="header__menu" src="./img/hamburger.png" onClick={showMenu} alt="menu"></img>
+          <img className="header__undo" src="./img/undo-white.png" alt="undo"></img>
           <h1>TAOTY</h1>
         </div>
 
-        <div className="sidebar">
+        <div className="sidebar" ref={sidebar}>
           <form className="sidebar__form year">
             <label htmlFor="year">Year</label> <br></br>
             <select
@@ -128,14 +182,13 @@ function App() {
               <option value="all">All Genres</option>
             </select>
           </form>
+          <button className="sidebar__reset" onClick={() => reset()}> <span className="sidebar__reset--text">Reset</span> 
+          <img src="./img/undo.png" className="sidebar__reset--undo-icon" alt="undo"></img>
+          </button>
         </div>
 
         <div className="results" id="top">
-          <h2 className="results__title">
-            {selectedYear === "all"
-              ? "All Albums"
-              : "Albums of " + selectedYear}
-          </h2>
+          <h2 className="results__title">{makeTitle()}</h2>
 
           <div className="results__grid">
             {albums && (
