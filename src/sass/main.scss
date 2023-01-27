@@ -28,7 +28,7 @@ html {
 @media (max-width: 550px) {
   .container {
     grid-template-columns: 100%;
-    grid-template-rows: 8rem 8rem 1fr;
+    grid-template-rows: 8rem 1fr;
   }
 }
 
@@ -40,24 +40,54 @@ html {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 4rem;
   font-size: 1.5rem;
   z-index: 2;
 
-  &__menu, &__undo {
-    height: 4.5rem;
-    width: 4.5rem;
-    cursor: pointer;
+  &__menu {
+    display: none;
   }
 
   &__undo {
-    position: fixed;
     display: none;
   }
 
 }
 
+@media (max-width: 550px) {
+  .header {
+
+    position: fixed;
+    width: 100%;
+    height: 8rem;
+    justify-content: space-between;
+
+    &__menu {
+      display: block;
+      height: 4.5rem;
+      width: 4.5rem;
+      cursor: pointer;
+    }
+  
+    &__undo {
+      display: block;
+      height: 4rem;
+      width: 4rem;
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1.5s ease-out;
+      cursor: pointer;
+    }
+  
+    &__undo.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(5.5rem);
+    }
+  }
+}
 
 
 
@@ -125,6 +155,9 @@ html {
     gap: 1rem;
     font-size: 1.4rem;
     color: rgb(84, 84, 84);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 2s ease-in;
 
     &:hover {
       transform: translateY(-0.1rem);
@@ -142,20 +175,25 @@ html {
       width: 1.5rem;
     }
   }
+
+  &__reset.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
 }
 
 @media (max-width: 550px) {
   .sidebar {
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-    position: static;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2fr 1fr;
+    position: fixed;
+    display: flex;
+    height: 8rem;
+    width: 100%;
+    flex-direction: row;
     transition: all 1s ease-out;
-    transform: translateY(-8rem);
 
     &__form {
+      flex: 1;
       padding: 1rem;
       margin: 0;
       border-radius: 0;
@@ -172,8 +210,6 @@ html {
       border-radius: 0;
       display: none;
 
-      
-      
       &:hover {
         transform: none;
         box-shadow: none;
@@ -187,7 +223,7 @@ html {
   }
 
   .sidebar.visible {
-    transform: translateY(0);
+    transform: translateY(8rem);
   }
 }
 
@@ -342,6 +378,11 @@ html {
   .results {
     grid-row: 3 / -1;
     grid-column: 1 / -1;
+    transition: all 1s ease-out;
+  }
+
+  .results.shift {
+    margin-top: 8rem;
   }
 }
 

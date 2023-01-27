@@ -9,8 +9,12 @@ function App() {
   const [selectedYear, setSelectedYear] = useState("all");
   const [showWinners, setShowWinners] = useState("false");
   const [selectedGenre, setSelectedGenre] = useState("all");
+  const [resetVisible, setResetVisible] = useState(false);
 
   const sidebar = useRef(null);
+  const resetDesktop = useRef(null);
+  const resetMobile = useRef(null);
+  const results = useRef(null);
 
 
   // Get list of primary genres from the database
@@ -46,6 +50,28 @@ function App() {
         console.log(error.message);
       });
   }, [selectedYear, showWinners, selectedGenre]);
+
+  // Set visibility of reset buttons
+
+    useEffect(() => {
+
+      if (selectedYear !== 'all' || showWinners !== 'false' || selectedGenre !== "all") {
+        setResetVisible(true);
+      } else {
+        setResetVisible(false);
+      }
+
+      if(resetVisible) {
+        resetDesktop.current.classList.add('visible');
+        resetMobile.current.classList.add('visible');
+      }
+
+      if(!resetVisible) {
+        resetDesktop.current.classList.remove('visible');
+        resetMobile.current.classList.remove('visible');
+      }
+
+    }, [resetVisible, selectedYear, selectedGenre, showWinners])
 
   // Functions to select and deselect albums
 
@@ -108,6 +134,7 @@ function App() {
 
   const showMenu = () => {
     sidebar.current.classList.toggle('visible');
+    results.current.classList.toggle('shift');
   }  
 
   return (
@@ -115,7 +142,7 @@ function App() {
       <div className="container">
         <div className="header">
           <img className="header__menu" src="./img/hamburger.png" onClick={showMenu} alt="menu"></img>
-          <img className="header__undo" src="./img/undo-white.png" alt="undo"></img>
+          <img className="header__undo" src="./img/undo-white.png" alt="undo" ref={resetMobile} onClick={reset}></img>
           <h1>TAOTY</h1>
         </div>
 
@@ -182,12 +209,12 @@ function App() {
               <option value="all">All Genres</option>
             </select>
           </form>
-          <button className="sidebar__reset" onClick={() => reset()}> <span className="sidebar__reset--text">Reset</span> 
+          <button className="sidebar__reset" onClick={() => reset()} ref={resetDesktop}> <span className="sidebar__reset--text">Reset</span> 
           <img src="./img/undo.png" className="sidebar__reset--undo-icon" alt="undo"></img>
           </button>
         </div>
 
-        <div className="results" id="top">
+        <div className="results" ref={results}>
           <h2 className="results__title">{makeTitle()}</h2>
 
           <div className="results__grid">
