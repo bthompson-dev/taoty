@@ -146,6 +146,8 @@ function App() {
           <h1>TAOTY</h1>
         </div>
 
+{/* Sidebar */}
+
         <div className="sidebar" ref={sidebar}>
           <form className="sidebar__form year">
             <label htmlFor="year">Year</label> <br></br>
@@ -214,7 +216,9 @@ function App() {
           </button>
         </div>
 
-        <div className="results" ref={results}>
+{/* Results */}
+
+        <div className="results" ref={results} id="top">
           <h2 className="results__title">{makeTitle()}</h2>
 
           <div className="results__grid">

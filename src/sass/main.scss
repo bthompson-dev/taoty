@@ -60,7 +60,7 @@ html {
 
     position: fixed;
     width: 100%;
-    height: 8rem;
+    height: 7vh;
     justify-content: space-between;
 
     &__menu {
@@ -72,8 +72,8 @@ html {
   
     &__undo {
       display: block;
-      height: 4rem;
-      width: 4rem;
+      height: 3.5rem;
+      width: 3.5rem;
       position: absolute;
       visibility: hidden;
       opacity: 0;
@@ -84,7 +84,7 @@ html {
     &__undo.visible {
       opacity: 1;
       visibility: visible;
-      transform: translateX(5.5rem);
+      transform: translateX(6rem);
     }
   }
 }
@@ -157,7 +157,7 @@ html {
     color: rgb(84, 84, 84);
     visibility: hidden;
     opacity: 0;
-    transition: all 2s ease-in;
+    transition: all 1.5s ease-in;
 
     &:hover {
       transform: translateY(-0.1rem);
@@ -243,7 +243,7 @@ html {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 3vw;
-    padding: 5vh;
+    padding: 3vw;
   }
 
   &__title {
@@ -260,6 +260,7 @@ html {
     width: clamp(20rem, 18vw, 100rem);
     transition: transform 0.75s;
     backface-visibility: hidden;
+    
 
     &--primary-container {
       width: 100%;
@@ -304,6 +305,10 @@ html {
         animation: expand 2s 3;
         animation-delay: 1s;
       }
+
+      .winner-mobile {
+        display: none;
+      }
     }
 
     &:hover {
@@ -313,6 +318,10 @@ html {
     .trophy {
       height: 2.5rem;
       width: 3.5rem;
+    }
+
+    .info--close-mobile {
+      display: none;
     }
 
     // Selected Album
@@ -379,6 +388,90 @@ html {
     grid-row: 3 / -1;
     grid-column: 1 / -1;
     transition: all 1s ease-out;
+
+    &__grid {
+      gap: 6vw;
+    }
+
+    &__album {
+      flex-grow: 1;
+
+    &.selected {
+      height: 93vh;
+      width: 100%;
+      position: fixed;
+      top: 7vh;
+      background-color: white;
+      margin: 0 -1rem;
+      padding: 2rem 2rem;
+      display: inline-block;
+      overflow: scroll;
+
+      .info--close-desktop {
+        display: none;
+      }
+
+      .info--close-mobile {
+        display: block;
+        position: absolute;
+        top: -7rem;
+        right: 1.5rem;
+        font-size: 6rem;
+        color: #b8b4b4;
+        transition: all 1s;
+        z-index: 2;
+      }
+
+      &:hover {
+        transform: translate(0);
+      }
+
+      .results {
+        &__album {
+          &--primary-container {
+            width: 100%;
+            padding: 0;
+            position: relative;
+            margin-top: 4rem;
+          }
+
+          &--img-container {
+            text-align: center;
+          }
+
+          &--img {
+            height: 60vw;
+            width: 60vw;
+          }
+
+          &--extra-info {
+            width: 100%;
+
+            .description {
+              padding: 0 3rem;
+            }
+
+            .winner {
+              padding-top: 4rem;
+              margin-bottom: 5rem;
+            }
+
+            .winner-mobile {
+              display: flex;
+            }
+
+            .winner-desktop {
+              display: none;
+            }
+
+          }
+        }
+      }
+
+    }  
+
+    }
+
   }
 
   .results.shift {

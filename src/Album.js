@@ -12,6 +12,10 @@ const Album = ({ album, select, deselect }) => {
             onClick={select}
           />
         </div>
+        <span className="info--close info--close-mobile" onClick={deselect}>
+          &times;
+        </span>
+
 
         <div className="results__album--text">
           <p className="title">{album.title}
@@ -22,9 +26,18 @@ const Album = ({ album, select, deselect }) => {
       </div>
 
       <div className="results__album--extra-info">
-        <span className="info--close" onClick={deselect}>
+        <span className="info--close info--close-desktop" onClick={deselect}>
           &times;
         </span>
+        {album.winner && (
+          <p className="winner winner-mobile"> 
+            <img src="./img/trophy.png" className="trophy" alt="Trophy"></img>
+            <span className="firework-1"></span>
+            <span className="firework-2"></span>
+            <span className="firework-3"></span>
+            Thompson Album of the Year {album.year}
+          <img src="./img/trophy.png" className="trophy" alt="Trophy"></img></p>
+        )}
         <table>
           <tbody>
             <tr>
@@ -50,7 +63,7 @@ const Album = ({ album, select, deselect }) => {
 
         <p className="description">{album.description}</p>
         {album.winner && (
-          <p className="winner"> 
+          <p className="winner winner-desktop"> 
             <img src="./img/trophy.png" className="trophy" alt="Trophy"></img>
             <span className="firework-1"></span>
             <span className="firework-2"></span>
