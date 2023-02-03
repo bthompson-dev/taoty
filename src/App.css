@@ -257,9 +257,6 @@ html {
 .results__album--extra-info .winner-mobile {
   display: none;
 }
-.results__album:hover {
-  transform: translateY(-0.5rem);
-}
 .results__album .trophy {
   height: 2.5rem;
   width: 3.5rem;
@@ -311,6 +308,11 @@ html {
   font-size: 1.8rem;
 }
 
+@media (min-width: 550px) {
+  .results__album:hover {
+    transform: translateY(-0.5rem);
+  }
+}
 @media (max-width: 550px) {
   .results {
     grid-row: 3/-1;
@@ -322,10 +324,13 @@ html {
   }
   .results__album {
     flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 20rem;
   }
   .results__album.selected {
     height: 93vh;
     width: 100%;
+    max-width: none;
     position: fixed;
     top: 7vh;
     background-color: white;
@@ -346,9 +351,6 @@ html {
     color: #b8b4b4;
     transition: all 1s;
     z-index: 2;
-  }
-  .results__album.selected:hover {
-    transform: translate(0);
   }
   .results__album.selected .results__album--primary-container {
     width: 100%;
