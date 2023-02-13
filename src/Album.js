@@ -7,7 +7,10 @@ const Album = ({ album, select, deselect }) => {
         <div className="results__album--img-container">
           <img
             className="results__album--img"
-            src={album.image}
+            srcSet={`${album.images[0]} 250w, ${album.images[1]} 500w, ${album.images[2]} 1000w`}
+            sizes="(min-width: 551px) 28vw,
+            ((min-width: 365px) and (max-width: 550px) 60vw),
+            (max-width: 364px) 70vw"
             alt={album.title}
             onClick={select}
           />
@@ -31,12 +34,12 @@ const Album = ({ album, select, deselect }) => {
         </span>
         {album.winner && (
           <p className="winner winner-mobile"> 
-            <img src="./img/trophy.png" className="trophy" alt="Trophy"></img>
+            <img src="./img/icons/trophy.png" className="trophy" alt="Trophy"></img>
             <span className="firework-1"></span>
             <span className="firework-2"></span>
             <span className="firework-3"></span>
             Thompson Album of the Year {album.year}
-          <img src="./img/trophy.png" className="trophy" alt="Trophy"></img></p>
+          <img src="./img/icons/trophy.png" className="trophy" alt="Trophy"></img></p>
         )}
         <table>
           <tbody>
@@ -64,12 +67,12 @@ const Album = ({ album, select, deselect }) => {
         <p className="description">{album.description}</p>
         {album.winner && (
           <p className="winner winner-desktop"> 
-            <img src="./img/trophy.png" className="trophy" alt="Trophy"></img>
+            <img src="./img/icons/trophy.png" className="trophy" alt="Trophy"></img>
             <span className="firework-1"></span>
             <span className="firework-2"></span>
             <span className="firework-3"></span>
             Thompson Album of the Year {album.year}
-          <img src="./img/trophy.png" className="trophy" alt="Trophy"></img></p>
+          <img src="./img/icons/trophy.png" className="trophy" alt="Trophy"></img></p>
         )}
       </div>
     </div>

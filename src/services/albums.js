@@ -7,9 +7,14 @@ const getAll = (headers) => {
     return request.then(response => response.data)
 }
 
-const getKeys = () => {
-    return axios.get(baseUrl + '/keys')
+const getGenres = () => {
+    return axios.get(baseUrl + '/genres')
     .then(response => response.data)
 }
 
-export {getAll, getKeys} ;
+const getYears = () => {
+    return axios.get(baseUrl + '/years')
+    .then(response => response.data)
+}
+
+export {getAll, getGenres, getYears} ;

@@ -59,6 +59,10 @@ html {
     height: 4.5rem;
     width: 4.5rem;
     cursor: pointer;
+    transition: all 0.5s;
+  }
+  .header__menu.fade {
+    opacity: 0.5;
   }
   .header__undo {
     display: block;
@@ -322,11 +326,6 @@ html {
   .results__grid {
     gap: 6vw;
   }
-  .results__album {
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 20rem;
-  }
   .results__album.selected {
     height: 93vh;
     width: 100%;
@@ -383,6 +382,12 @@ html {
   }
   .results.shift {
     margin-top: 8rem;
+  }
+}
+@media (max-width: 364px) {
+  .results__album {
+    flex-grow: 1;
+    max-width: 70vw;
   }
 }
 @keyframes FadeInLeft {
