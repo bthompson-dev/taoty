@@ -86,7 +86,7 @@ function App() {
   const select = (event) => {
     const album = event.target.parentElement.parentElement.parentElement;
     album.classList.add("selected");
-    document.getElementById("top").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("top").scrollIntoView({ behavior: "auto" });
     setAlbumSelected(true);
     mobileMenu.current.classList.add("fade");
   };
@@ -154,6 +154,7 @@ function App() {
   return (
     <>
       <div className="container">
+        
         <div className="header">
           <img
             className="header__menu"
@@ -176,7 +177,7 @@ function App() {
 
         <div className="sidebar" ref={sidebar}>
           <form className="sidebar__form year">
-            <label htmlFor="year">Year</label> <br></br>
+            <label htmlFor="year">Year</label>
             <select
               name="year"
               id="year"
@@ -197,7 +198,7 @@ function App() {
           </form>
 
           <form className="sidebar__form winners">
-            <label htmlFor="winners">Winners</label> <br></br>
+            <label htmlFor="winners">Winners</label>
             <select
               name="winners"
               id="winners"
@@ -211,7 +212,7 @@ function App() {
           </form>
 
           <form className="sidebar__form genre">
-            <label htmlFor="genre">Genre</label> <br></br>
+            <label htmlFor="genre">Genre</label>
             <select
               name="genre"
               id="genre"

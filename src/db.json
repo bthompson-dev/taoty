@@ -638,5 +638,104 @@
     "year": 2015,
     "release_date": { "$date": "2015-07-17" },
     "winner": false
+  },
+
+
+
+  {
+    "title": "Dragon New Warm Mountain I Believe in You",
+    "artist": "Big Thief",
+    "genre": "Indie Folk / Folk Rock",
+    "primary_genres": ["Folk", "Rock"],
+    "nationality": "USA",
+    "description": "Dragon New Warm Mountain I Believe in You is the 5th album by New York indie folk band Big Thief. It’s a varied and expansive record, moving from bucolic country hoedowns to ethereal ballads. A sense of childlike inventiveness runs throughout as the band finds new ways to explore the limits of their sound (at one point smashing icicles for percussion!). At the centre of it all, lead singer Adrianne Lenker holds together this eclectic universe with her distinctive vocals and lyrics that jump from the pedestrian to the metaphysical. Spontaneous, earthy and joyful.",
+    "images": ["./img/big_thief-small.jpg", "./img/big_thief-medium.jpg", "./img/big_thief-large.jpg"],
+    "year": 2022,
+    "release_date": { "$date": "2022-02-11" },
+    "winner": false
+  },
+  {
+    "title": "Ants From Up There",
+    "artist": "Black Country, New Road",
+    "genre": "Art Rock / Post-Rock",
+    "primary_genres": ["Rock"],
+    "nationality": "UK",
+    "description": "With their second album, Black Country, New Road continue to develop their distinctive brand of melancholic art rock, allowing it to blossom with a new-found softness and melody, while retaining the surging grandeur of their debut. Unfortunately, four days before the release of the record in February, the lead singer Isaac Woods announced his resignation from the band due to mental health issues. Listening to his pained lyrics of heartbreak, futility and self-destruction on the album, it’s not hard to see what might have caused him to step away. Although the band have now started touring without him, and with a new set of songs, Ants From Up There remains a cathartic work of art that is triumphant, but heart-breaking in its vulnerability.",
+    "images": ["./img/black_country_ants_from_up_there-small.jpg", "./img/black_country_ants_from_up_there-medium.jpg", "./img/black_country_ants_from_up_there-large.jpg" ],
+    "year": 2022,
+    "release_date": { "$date": "2022-02-04" },
+    "winner": false
+  },  
+  {
+    "title": "Topical Dancer",
+    "artist": "Charlotte Adigéry & Bolis Pupul",
+    "genre": "Art Pop / Tech House",
+    "primary_genres": ["Pop", "Electronic", "Dance"],
+    "nationality": "Belgium",
+    "description": "Charlotte Adigéry and Bolis Pupul are Belgian musicians, brought together as a duo by their shared experience as artists from immigrant backgrounds (Adigéry from Martinique and Guadeloupe, Pupul from China). On Topical Dancer, their first album together, they take all their bottled-up frustration at the casual racism, misogyny and xenophobia they have faced, and blend it into a catchy concoction of electro pop and tech house sounds. Layering heavy politics over a base of energetic, punchy beats might sound counterproductive, but it allows them to subversively poke fun of bigotry and prejudice without becoming didactic or heavy-handed.",
+    "images": ["./img/charlotte_adigery_bolis_pupul-small.jpg", "./img/charlotte_adigery_bolis_pupul-medium.jpg", "./img/charlotte_adigery_bolis_pupul-large.jpg"],
+    "year": 2022,
+    "release_date": { "$date": "2022-03-04" },
+    "winner": false
+  },
+  {
+    "title": "Wet Leg",
+    "artist": "Wet Leg",
+    "genre": "Indie Rock",
+    "primary_genres": ["Rock"],
+    "nationality": "UK",
+    "description": "Wet Leg are an indie rock band from the Isle of Wight, who shot to fame last year with their viral single ‘Chaise Longue’. Their self-titled debut album follows this up with a collection of smart, sardonic tracks that express a sense of modern-day malaise with an infectious energy. Whether they’re singing about doom-scrolling, social exhaustion or ex-boyfriends, any hint of anxiety or stress is smothered beneath sunny guitar hooks and deadpan humour.",
+    "images": ["./img/wet_leg-small.jpg", "./img/wet_leg-medium.jpg", "./img/wet_leg-large.jpg"],
+    "year": 2022,
+    "release_date": { "$date": "2022-04-08" },
+    "winner": false
+  },
+  {
+    "title": "Mr. Morale & The Big Steppers",
+    "artist": "Kendrick Lamar",
+    "genre": "Conscious Hip Hop / West Coast Hip Hop",
+    "primary_genres": ["Hip Hop"],
+    "nationality": "USA",
+    "description": "Back after a five year hiatus, it’s Kendrick Lamar with his sixth studio album, Mr. Morale & The Big Steppers. One of his most ambitious and confessional works, his target here is his own psyche. Over eighteen tracks, he recounts his own journey through therapy, exposing ugly truths about his past: mistakes, prejudices and generational scars he still carries. Like the mental processes he is trying to understand, the sound of the music is restless and at times jarring, jumping from trap beats to stark piano and choral arrangements. Vocal snippets scattered throughout suggest those most strongly influencing Kendrick: the German self-help author Eckhart Tolle, Kendrick’s long-term partner Whitney, and his young children (who feature on the album cover). His newfound tenderness and introspection is driven by the desire to heal himself for their sake – to become a father who can save them from trauma and pain. On Mr. Morale, Kendrick’s versatility as a rapper is matched by his daring in opening himself up to the world.",
+    "images": ["./img/kendrick_lamar_mr_morale-small.jpg", "./img/kendrick_lamar_mr_morale-medium.jpg", "./img/kendrick_lamar_mr_morale-large.jpg"],
+    "year": 2022,
+    "release_date": { "$date": "2022-05-13" },
+    "winner": false
+  },
+  {
+    "title": "Natural Brown Prom Queen",
+    "artist": "Sudan Archives",
+    "genre": "Alternative R&B / Art Pop",
+    "primary_genres": ["R&B", "Pop"],
+    "nationality": "USA",
+    "description": "Brittney Parks (a.k.a. Sudan Archives) is a singer-songwriter and multi-instrumentalist from Cincinnati, Ohio. Originally known for her R&B compositions built up with a violin and a loop pedal, on Natural Brown Prom Queen she expands her sound to experiment with a dizzying range of genres. Telling personal stories of relationships, femininity and race, she weaves together myriad flavours of R&B, hip-hop, jazz, psychedelia, pop and more in a shimmering collage of self-expression. Anything but average.",
+    "images": ["./img/sudan_archives-small.jpg", "./img/sudan_archives-medium.jpg", "./img/sudan_archives-large.jpg"],
+    "year": 2022,
+    "release_date": { "$date": "2022-09-09" },
+    "winner": false
+  },
+  {
+    "title": "I Love You Jennifer B",
+    "artist": "Jockstrap",
+    "genre": "Art Pop / Glitch Pop",
+    "primary_genres": ["Pop", "Electronic"],
+    "nationality": "UK",
+    "description": "I Love You Jennifer B is the debut album from Jockstrap, a musical duo consisting of Georgia Ellery and Taylor Skye, who met at Guildhall School of Music & Drama in London. Impressively, it’s Georgia’s second entry on the TAOTYs this year, as she also plays violin for Black Country, New Road. It’s another record that juggles with genre, ripping up the listener’s expectations with gleeful juxtapositions of sound and style. It’s impossible to tell what will come next, as moments of sweetness and beauty are punctured by distortion, dubstep beats, glitch pop sounds or dramatic strings and percussion. The effect is unsettling and futuristic, but also weirdly beautiful.",
+    "images": ["./img/jockstrap-small.png", "./img/jockstrap-medium.png", "./img/jockstrap-large.png"],
+    "year": 2022,
+    "release_date": { "$date": "2022-09-09" },
+    "winner": true
+  },
+  {
+    "title": "NO THANK YOU",
+    "artist": "Little Simz",
+    "genre": "Conscious Hip Hop",
+    "primary_genres": ["Hip Hop"],
+    "nationality": "UK",
+    "description": "She’s back. It’s been a busy year for Little Simz, with the success of Sometimes I Might Be Introvert taking her to new heights, including awards at the Brits and the Mercury Prize. At the same time, she has continued to struggle with the music industry as an independent artist. Earlier this year, she parted company with her manager of seven years, and was then forced to cancel her planned US tour due to financial uncertainty and stress. Her disillusionment and anger towards the industry burns fiercely on NO THANK YOU. She lays into the ‘suits’ who have taken advantage of her, dissects the motives behind those pushing her to ever greater commercial success, and questions what she’s doing it all for. Longtime collaborator Inflo (known for his work as part of Sault) returns as producer, crafting lush arrangements of gospel choir and strings that not only compliment Simz’ flow but frequently rise above it as a centrepiece of the record. With her 3rd consecutive album in the TAOTYs, Little Simz continues to establish herself as a pivotal voice in the UK rap scene – one who won’t hold back.",
+    "images": ["./img/little_simz_no_thank_you-small.jpg", "./img/little_simz_no_thank_you-medium.jpg", "./img/little_simz_no_thank_you-large.jpg"],
+    "year": 2022,
+    "release_date": { "$date": "2022-12-12" },
+    "winner": false
   }
 ]

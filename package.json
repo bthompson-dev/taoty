@@ -1,6 +1,6 @@
 {
   "name": "taoty",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "compile:sass": "sass src/sass/main.scss src/App.css",
-    "watch:sass": "sass --watch src/sass/main.scss src/App.css"
+    "watch:sass": "sass --watch src/sass/main.scss src/App.css",
+    "deploy:build": "npm run build && cp -r build/. ../'taoty - build'"
   },
   "eslintConfig": {
     "extends": [

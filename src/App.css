@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Ubuntu-web";
+  font-style: normal;
+  font-weight: 300, 400, 700;
+  src: url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
+}
 *,
 *::before,
 *::after {
@@ -9,7 +15,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu-web", sans-serif;
 }
 
 @media (max-width: 800px) {
@@ -38,7 +44,7 @@ html {
   justify-content: flex-end;
   padding: 4rem;
   font-size: 1.5rem;
-  z-index: 2;
+  z-index: 3;
 }
 .header__menu {
   display: none;
@@ -51,8 +57,9 @@ html {
   .header {
     position: fixed;
     width: 100%;
-    height: 7vh;
+    height: 8lvh;
     justify-content: space-between;
+    padding: 0 4rem;
   }
   .header__menu {
     display: block;
@@ -81,9 +88,8 @@ html {
   }
 }
 .sidebar {
-  grid-column: 1/2;
-  grid-row: 2/-1;
   height: 100%;
+  width: 15rem;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -164,10 +170,11 @@ html {
   .sidebar {
     position: fixed;
     display: flex;
-    height: 8rem;
+    height: 8lvh;
     width: 100%;
     flex-direction: row;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
+    align-items: center;
   }
   .sidebar__form {
     flex: 1;
@@ -175,10 +182,19 @@ html {
     margin: 0;
     border-radius: 0;
     box-shadow: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .sidebar__form label {
+    font-size: 2.1rem;
   }
   .sidebar__form--select {
     padding: 0;
     margin: 0;
+    font-size: 1.7rem;
   }
   .sidebar__reset {
     margin: 0 1rem;
@@ -194,7 +210,7 @@ html {
     width: 3rem;
   }
   .sidebar.visible {
-    transform: translateY(8rem);
+    transform: translateY(8lvh);
   }
 }
 .results {
@@ -217,7 +233,7 @@ html {
   padding-bottom: 3rem;
 }
 .results__album {
-  width: clamp(20rem, 18vw, 100rem);
+  width: clamp(160px, 18vw, 100rem);
   transition: transform 0.75s;
   backface-visibility: hidden;
 }
@@ -253,7 +269,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 2rem;
+  margin-top: 4rem;
   gap: 0.5rem;
   animation: expand 2s 3;
   animation-delay: 1s;
@@ -273,6 +289,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   order: -1;
+  margin-bottom: 5rem;
 }
 .results__album.selected .info--close {
   position: absolute;
@@ -288,12 +305,13 @@ html {
 }
 .results__album.selected .results__album--primary-container {
   width: 50%;
-  padding: 0 10%;
+  padding: 0 5% 0 10%;
 }
 .results__album.selected .results__album--img {
   height: 28vw;
   width: 28vw;
-  transition: all 3s;
+  animation: scaleUp 3s;
+  animation-fill-mode: forwards;
 }
 .results__album.selected .results__album--text {
   font-size: 2rem;
@@ -311,6 +329,9 @@ html {
   font-weight: 150;
   font-size: 1.8rem;
 }
+.results__album.selected .results__album--extra-info .description {
+  margin-left: 2rem;
+}
 
 @media (min-width: 550px) {
   .results__album:hover {
@@ -321,22 +342,29 @@ html {
   .results {
     grid-row: 3/-1;
     grid-column: 1/-1;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
   }
   .results__grid {
     gap: 6vw;
   }
+  .results__album--text {
+    font-size: 1.7rem;
+  }
+  .results__album--text .title {
+    margin-bottom: 0.4rem;
+  }
   .results__album.selected {
-    height: 93vh;
+    height: 93lvh;
     width: 100%;
     max-width: none;
     position: fixed;
-    top: 7vh;
+    top: 8lvh;
     background-color: white;
     margin: 0 -1rem;
     padding: 2rem 2rem;
     display: inline-block;
     overflow: scroll;
+    z-index: 2;
   }
   .results__album.selected .info--close-desktop {
     display: none;
@@ -349,7 +377,7 @@ html {
     font-size: 6rem;
     color: #b8b4b4;
     transition: all 1s;
-    z-index: 2;
+    z-index: 3;
   }
   .results__album.selected .results__album--primary-container {
     width: 100%;
@@ -363,12 +391,17 @@ html {
   .results__album.selected .results__album--img {
     height: 60vw;
     width: 60vw;
+    animation: none;
+    transition: all 3s;
   }
   .results__album.selected .results__album--extra-info {
     width: 100%;
+    padding: 0;
+    font-size: 1.8rem;
   }
   .results__album.selected .results__album--extra-info .description {
     padding: 0 3rem;
+    margin-bottom: 5rem;
   }
   .results__album.selected .results__album--extra-info .winner {
     padding-top: 4rem;
@@ -393,10 +426,21 @@ html {
 @keyframes FadeInLeft {
   0% {
     opacity: 0;
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+@keyframes scaleUp {
+  0% {
+    height: 24vw;
+    width: 24vw;
+  }
+  100% {
+    height: 28vw;
+    width: 28vw;
   }
 }
 @keyframes expand {
