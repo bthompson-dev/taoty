@@ -285,6 +285,7 @@ html {
     width: clamp(160px, 18vw, 100rem);
     transition: transform 0.75s;
     backface-visibility: hidden;
+    scroll-margin-top: 5rem;
     
 
     &--primary-container {
@@ -431,6 +432,8 @@ html {
     }
 
     &__album {
+
+      scroll-margin-top: 10rem;
 
       &--text {
         font-size: 1.7rem;

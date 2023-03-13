@@ -1,8 +1,22 @@
 const moment = require("moment");
 
-const Album = ({ album, select, deselect }) => {
+const Album = ({ album, selectRef, deselectRef, getMap }) => {
+
+
+
   return (
-    <div className="results__album">
+    <div className="results__album" 
+    ref={(node) => {
+
+      const map = getMap();
+      if (node) {
+        map.set(album._id, node)
+      } else {
+        map.delete(album._id);
+      }
+
+    }}
+    >
       <div className="results__album--primary-container">
         <div className="results__album--img-container">
           <img
@@ -12,10 +26,10 @@ const Album = ({ album, select, deselect }) => {
             ((min-width: 365px) and (max-width: 550px) 60vw),
             (max-width: 364px) 70vw"
             alt={album.title}
-            onClick={select}
+            onClick={() => selectRef(album._id)}
           />
         </div>
-        <span className="info--close info--close-mobile" onClick={deselect}>
+        <span className="info--close info--close-mobile" onClick={() => deselectRef(album._id)}>
           &times;
         </span>
 
@@ -29,7 +43,7 @@ const Album = ({ album, select, deselect }) => {
       </div>
 
       <div className="results__album--extra-info">
-        <span className="info--close info--close-desktop" onClick={deselect}>
+        <span className="info--close info--close-desktop" onClick={() => deselectRef(album._id)}>
           &times;
         </span>
         {album.winner && (

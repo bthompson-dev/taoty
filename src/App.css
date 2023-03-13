@@ -236,6 +236,7 @@ html {
   width: clamp(160px, 18vw, 100rem);
   transition: transform 0.75s;
   backface-visibility: hidden;
+  scroll-margin-top: 5rem;
 }
 .results__album--primary-container {
   width: 100%;
@@ -346,6 +347,9 @@ html {
   }
   .results__grid {
     gap: 6vw;
+  }
+  .results__album {
+    scroll-margin-top: 10rem;
   }
   .results__album--text {
     font-size: 1.7rem;

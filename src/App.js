@@ -11,13 +11,15 @@ function App() {
   const [showWinners, setShowWinners] = useState("false");
   const [selectedGenre, setSelectedGenre] = useState("all");
   const [resetVisible, setResetVisible] = useState(false);
-  const [albumSelected, setAlbumSelected] = useState(false);
+  const [selectedAlbum, setSelectedAlbum] = useState(null);
 
   const sidebar = useRef(null);
   const mobileMenu = useRef(null);
   const resetDesktop = useRef(null);
   const resetMobile = useRef(null);
   const results = useRef(null);
+
+  const albumsMap = useRef(null);
 
   // Get list of primary genres and years from the database
 
@@ -81,22 +83,40 @@ function App() {
     }
   }, [resetVisible, selectedYear, selectedGenre, showWinners]);
 
+
   // Functions to select and deselect albums
 
-  const select = (event) => {
-    const album = event.target.parentElement.parentElement.parentElement;
-    album.classList.add("selected");
-    document.getElementById("top").scrollIntoView({ behavior: "auto" });
-    setAlbumSelected(true);
-    mobileMenu.current.classList.add("fade");
-  };
+  const selectRef = (id) => {
 
-  const deselect = (event) => {
-    const album = event.target.parentElement.parentElement;
+    if (selectedAlbum) {
+      selectedAlbum.classList.remove("selected")
+    }
+
+    const map = getMap();
+    const album = map.get(id);
+    album.classList.add("selected");
+    album.scrollIntoView({behavior: "smooth", block: "start"});
+    setSelectedAlbum(album);
+    mobileMenu.current.classList.add("fade");
+  }
+
+  const deselectRef = (id) => {
+    const map = getMap();
+    const album = map.get(id);
     album.classList.remove("selected");
-    setAlbumSelected(false);
+    album.scrollIntoView();
+    setSelectedAlbum(null);
     mobileMenu.current.classList.remove("fade");
-  };
+  }
+
+  // Creating a map within the albumsMap ref if one doesn't exist
+  const getMap = () => {
+    if(!albumsMap.current) {
+      albumsMap.current = new Map();
+    }
+    return albumsMap.current;
+  }
+
 
   // Function to create title
 
@@ -145,7 +165,7 @@ function App() {
   // Menu button
 
   const showMenu = () => {
-    if (!albumSelected) {
+    if (!selectedAlbum) {
       sidebar.current.classList.toggle("visible");
       results.current.classList.toggle("shift");
     }
@@ -248,12 +268,12 @@ function App() {
 
         {/* Results */}
 
-        <div className="results" ref={results} id="top">
+        <div className="results" ref={results}>
           <h2 className="results__title">{makeTitle()}</h2>
 
           <div className="results__grid">
             {albums && (
-              <AlbumList albums={albums} select={select} deselect={deselect} />
+              <AlbumList albums={albums} selectRef={selectRef} deselectRef={deselectRef} getMap={getMap} />
             )}
           </div>
         </div>
