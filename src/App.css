@@ -61,15 +61,20 @@ html {
     justify-content: space-between;
     padding: 0 4rem;
   }
+  .header__mobile-icons {
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease-out;
+  }
+  .header__mobile-icons.fade {
+    opacity: 0.5;
+  }
   .header__menu {
     display: block;
     height: 4.5rem;
     width: 4.5rem;
     cursor: pointer;
     transition: all 0.5s;
-  }
-  .header__menu.fade {
-    opacity: 0.5;
   }
   .header__undo {
     display: block;

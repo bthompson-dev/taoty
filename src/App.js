@@ -4,6 +4,8 @@ import { useEffect, useState, useRef } from "react";
 import { getAll, getGenres, getYears } from "./services/albums";
 
 function App() {
+
+  // STATE
   const [albums, setAlbums] = useState(null);
   const [genres, setGenres] = useState(null);
   const [years, setYears] = useState(null);
@@ -13,12 +15,14 @@ function App() {
   const [resetVisible, setResetVisible] = useState(false);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
 
+  // REFS
   const sidebar = useRef(null);
-  const mobileMenu = useRef(null);
+  const mobileIcons = useRef(null);
   const resetDesktop = useRef(null);
   const resetMobile = useRef(null);
   const results = useRef(null);
 
+  // Map of refs to individual albums
   const albumsMap = useRef(null);
 
   // Get list of primary genres and years from the database
@@ -86,7 +90,7 @@ function App() {
 
   // Functions to select and deselect albums
 
-  const selectRef = (id) => {
+  const select = (id) => {
 
     if (selectedAlbum) {
       selectedAlbum.classList.remove("selected")
@@ -97,16 +101,16 @@ function App() {
     album.classList.add("selected");
     album.scrollIntoView({behavior: "smooth", block: "start"});
     setSelectedAlbum(album);
-    mobileMenu.current.classList.add("fade");
+    mobileIcons.current.classList.add("fade");
   }
 
-  const deselectRef = (id) => {
+  const deselect = (id) => {
     const map = getMap();
     const album = map.get(id);
     album.classList.remove("selected");
     album.scrollIntoView();
     setSelectedAlbum(null);
-    mobileMenu.current.classList.remove("fade");
+    mobileIcons.current.classList.remove("fade");
   }
 
   // Creating a map within the albumsMap ref if one doesn't exist
@@ -157,9 +161,11 @@ function App() {
   // Reset button
 
   const reset = () => {
-    setSelectedYear("all");
-    setShowWinners("false");
-    setSelectedGenre("all");
+    if (!selectedAlbum) {
+      setSelectedYear("all");
+      setShowWinners("false");
+      setSelectedGenre("all");
+    }
   };
 
   // Menu button
@@ -176,12 +182,12 @@ function App() {
       <div className="container">
         
         <div className="header">
+          <div className="header__mobile-icons" ref={mobileIcons}>
           <img
             className="header__menu"
             src="./img/icons/hamburger.png"
             onClick={showMenu}
             alt="menu"
-            ref={mobileMenu}
           ></img>
           <img
             className="header__undo"
@@ -190,6 +196,7 @@ function App() {
             ref={resetMobile}
             onClick={reset}
           ></img>
+          </div>
           <h1>TAOTY</h1>
         </div>
 
@@ -273,7 +280,7 @@ function App() {
 
           <div className="results__grid">
             {albums && (
-              <AlbumList albums={albums} selectRef={selectRef} deselectRef={deselectRef} getMap={getMap} />
+              <AlbumList albums={albums} select={select} deselect={deselect} getMap={getMap} />
             )}
           </div>
         </div>

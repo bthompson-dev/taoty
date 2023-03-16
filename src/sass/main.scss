@@ -71,16 +71,22 @@ html {
     justify-content: space-between;
     padding: 0 4rem;
 
+    &__mobile-icons {
+      display: flex;
+      align-items: center;
+      transition: all 0.5s ease-out;
+      
+      &.fade {
+        opacity: 0.5;
+      }
+    }
+
     &__menu {
       display: block;
       height: 4.5rem;
       width: 4.5rem;
       cursor: pointer;
       transition: all 0.5s;
-
-      &.fade {
-        opacity: 0.5;
-      }
 
     }
   
@@ -93,13 +99,14 @@ html {
       opacity: 0;
       transition: all 1.5s ease-out;
       cursor: pointer;
+
+      &.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(6rem);
+      }
     }
-  
-    &__undo.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(6rem);
-    }
+
   }
 }
 

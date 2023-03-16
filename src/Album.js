@@ -1,6 +1,6 @@
 const moment = require("moment");
 
-const Album = ({ album, selectRef, deselectRef, getMap }) => {
+const Album = ({ album, select, deselect, getMap }) => {
 
 
 
@@ -26,10 +26,10 @@ const Album = ({ album, selectRef, deselectRef, getMap }) => {
             ((min-width: 365px) and (max-width: 550px) 60vw),
             (max-width: 364px) 70vw"
             alt={album.title}
-            onClick={() => selectRef(album._id)}
+            onClick={() => select(album._id)}
           />
         </div>
-        <span className="info--close info--close-mobile" onClick={() => deselectRef(album._id)}>
+        <span className="info--close info--close-mobile" onClick={() => deselect(album._id)}>
           &times;
         </span>
 
@@ -43,7 +43,7 @@ const Album = ({ album, selectRef, deselectRef, getMap }) => {
       </div>
 
       <div className="results__album--extra-info">
-        <span className="info--close info--close-desktop" onClick={() => deselectRef(album._id)}>
+        <span className="info--close info--close-desktop" onClick={() => deselect(album._id)}>
           &times;
         </span>
         {album.winner && (

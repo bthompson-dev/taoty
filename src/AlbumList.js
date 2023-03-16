@@ -1,10 +1,10 @@
 import Album from "./Album";
 
-const AlbumList = ({ albums, selectRef, deselectRef, getMap }) => {
+const AlbumList = ({ albums, select, deselect, getMap }) => {
     return ( 
 
         albums.map(album => {
-            return <Album album={album} key={album._id} selectRef={selectRef} deselectRef={deselectRef} getMap={getMap} />
+            return <Album album={album} key={album._id} select={select} deselect={deselect} getMap={getMap} />
         })
 
      );
