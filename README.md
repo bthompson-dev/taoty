@@ -3,6 +3,8 @@
 This is a website created to display the results of my annual album of the year contest, which has been going since 2007!
 Users can filter albums by year, genre, and if the album won. Users can also select individual albums to view more details.
 
+Live website: https://taoty.co.uk/
+
 ## Technologies Used
 
 The frontend of the app was built with React using create-react-app. 
