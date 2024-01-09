@@ -26,6 +26,7 @@ const Album = ({ album, select, deselect, getMap }) => {
             ((min-width: 365px) and (max-width: 550px) 60vw),
             (max-width: 364px) 70vw"
             alt={album.title}
+            loading="lazy"
             onClick={() => select(album._id)}
           />
         </div>

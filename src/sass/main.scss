@@ -1,10 +1,9 @@
 @font-face {
-  font-family: 'Ubuntu-web';
+  font-family: "Ubuntu-web";
   font-style: normal;
   font-weight: 300, 400, 700;
-  src: url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+  src: url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
 }
-
 
 *,
 *::before,
@@ -59,12 +58,10 @@ html {
   &__undo {
     display: none;
   }
-
 }
 
 @media (max-width: 550px) {
   .header {
-
     position: fixed;
     width: 100%;
     height: 8lvh;
@@ -75,7 +72,7 @@ html {
       display: flex;
       align-items: center;
       transition: all 0.5s ease-out;
-      
+
       &.fade {
         opacity: 0.5;
       }
@@ -87,9 +84,8 @@ html {
       width: 4.5rem;
       cursor: pointer;
       transition: all 0.5s;
-
     }
-  
+
     &__undo {
       display: block;
       height: 3.5rem;
@@ -106,11 +102,8 @@ html {
         transform: translateX(6rem);
       }
     }
-
   }
 }
-
-
 
 // Sidebar
 
@@ -200,7 +193,6 @@ html {
     visibility: visible;
     opacity: 1;
   }
-
 }
 
 @media (max-width: 550px) {
@@ -212,7 +204,6 @@ html {
     flex-direction: row;
     transition: all 0.5s ease-out;
     align-items: center;
-    
 
     &__form {
       flex: 1;
@@ -262,7 +253,6 @@ html {
 // Album results grid
 
 .results {
-
   grid-row: 2 / -1;
   grid-column: 2 / -1;
 
@@ -284,8 +274,6 @@ html {
     padding-bottom: 3rem;
   }
 
-
-
   // Album class
 
   &__album {
@@ -293,7 +281,6 @@ html {
     transition: transform 0.75s;
     backface-visibility: hidden;
     scroll-margin-top: 5rem;
-    
 
     &--primary-container {
       width: 100%;
@@ -343,8 +330,6 @@ html {
         display: none;
       }
     }
-
-
 
     .trophy {
       height: 2.5rem;
@@ -421,12 +406,10 @@ html {
 }
 
 @media (min-width: 550px) {
-  
   .results__album:hover {
     transform: translateY(-0.5rem);
   }
 }
-
 
 @media (max-width: 550px) {
   .results {
@@ -439,7 +422,6 @@ html {
     }
 
     &__album {
-
       scroll-margin-top: 10rem;
 
       &--text {
@@ -450,85 +432,81 @@ html {
         }
       }
 
-    &.selected {
-      height: 93lvh;
-      width: 100%;
-      max-width: none;
-      position: fixed;
-      top: 8lvh;
-      background-color: white;
-      margin: 0 -1rem;
-      padding: 2rem 2rem;
-      display: inline-block;
-      overflow: scroll;
-      z-index: 2;
+      &.selected {
+        height: 93lvh;
+        width: 100%;
+        max-width: none;
+        position: fixed;
+        top: 8lvh;
+        background-color: white;
+        margin: 0 -1rem;
+        padding: 2rem 2rem;
+        display: inline-block;
+        overflow: scroll;
+        z-index: 2;
 
-      .info--close-desktop {
-        display: none;
-      }
+        .info--close-desktop {
+          display: none;
+        }
 
-      .info--close-mobile {
-        display: block;
-        position: absolute;
-        top: -7rem;
-        right: 1.5rem;
-        font-size: 6rem;
-        color: #b8b4b4;
-        transition: all 1s;
-        z-index: 3;
-      }
+        .info--close-mobile {
+          display: block;
+          position: absolute;
+          top: -7rem;
+          right: 1.5rem;
+          font-size: 6rem;
+          color: #b8b4b4;
+          transition: all 1s;
+          z-index: 3;
+        }
 
-      .results {
-        &__album {
-          &--primary-container {
-            width: 100%;
-            padding: 0;
-            position: relative;
-            margin-top: 4rem;
-          }
-
-          &--img-container {
-            text-align: center;
-          }
-
-          &--img {
-            height: 60vw;
-            width: 60vw;
-            animation: none;
-            transition: all 3s;
-          }
-
-          &--extra-info {
-            width: 100%;
-            padding: 0;
-            font-size: 1.8rem;
-
-            .description {
-              padding: 0 3rem;
-              margin-bottom: 5rem;
+        .results {
+          &__album {
+            &--primary-container {
+              width: 100%;
+              padding: 0;
+              position: relative;
+              margin-top: 4rem;
             }
 
-            .winner {
-              padding-top: 4rem;
-              margin-bottom: 5rem;
+            &--img-container {
+              text-align: center;
             }
 
-            .winner-mobile {
-              display: flex;
+            &--img {
+              height: 60vw;
+              width: 60vw;
+              animation: none;
+              transition: all 3s;
             }
 
-            .winner-desktop {
-              display: none;
-            }
+            &--extra-info {
+              width: 100%;
+              padding: 0;
+              font-size: 1.8rem;
 
+              .description {
+                padding: 0 3rem;
+                margin-bottom: 5rem;
+              }
+
+              .winner {
+                padding-top: 4rem;
+                margin-bottom: 5rem;
+              }
+
+              .winner-mobile {
+                display: flex;
+              }
+
+              .winner-desktop {
+                display: none;
+              }
+            }
           }
         }
       }
-
-    }  
-
     }
-
   }
 
   .results.shift {
@@ -558,7 +536,6 @@ html {
 }
 
 @keyframes scaleUp {
-
   0% {
     height: 24vw;
     width: 24vw;
@@ -568,7 +545,6 @@ html {
     height: 28vw;
     width: 28vw;
   }
-  
 }
 
 @keyframes expand {
