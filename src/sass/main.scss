@@ -363,6 +363,10 @@ html {
         }
       }
 
+      &:hover {
+        transform: none;
+      }
+
       .results {
         &__album {
           &--primary-container {
@@ -398,8 +402,37 @@ html {
             .description {
               margin-left: 2rem;
             }
+
+            .spotify-button {
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              margin-top: 2rem;
+              margin-left: 2rem;
+              padding: 0.5rem;
+              background-color: #191414;
+              color: white;
+              height: 5rem;
+              width: 19rem;
+              border-radius: 3rem;
+              cursor: pointer;
+              transition: all 0.5s;
+
+              & img {
+                height: 3rem;
+                width: 3rem;
+              }
+
+              &:hover {
+                transform: translateY(-0.1rem);
+                box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.2);
+              }
+
+            }
+
           }
         }
+
       }
     }
   }
@@ -521,6 +554,19 @@ html {
   }
 }
 
+// Spotify Player
+
+.spotify-player {
+   position: fixed;
+   margin: 0 auto;
+   height: 20vh;
+   width: 25%;
+   right: 50%;
+   bottom: 2vh;
+   z-index: 5;
+   transform: translateX(50%);
+}
+
 // Animations
 
 @keyframes FadeInLeft {
@@ -558,6 +604,7 @@ html {
     transform: scale(1);
   }
 }
+
 
 // Firework
 

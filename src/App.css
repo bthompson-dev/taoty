@@ -309,6 +309,9 @@ html {
   color: #4e4c4c;
   cursor: pointer;
 }
+.results__album.selected:hover {
+  transform: none;
+}
 .results__album.selected .results__album--primary-container {
   width: 50%;
   padding: 0 5% 0 10%;
@@ -337,6 +340,29 @@ html {
 }
 .results__album.selected .results__album--extra-info .description {
   margin-left: 2rem;
+}
+.results__album.selected .results__album--extra-info .spotify-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 0.5rem;
+  background-color: #191414;
+  color: white;
+  height: 5rem;
+  width: 19rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.results__album.selected .results__album--extra-info .spotify-button img {
+  height: 3rem;
+  width: 3rem;
+}
+.results__album.selected .results__album--extra-info .spotify-button:hover {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 550px) {
@@ -432,6 +458,17 @@ html {
     max-width: 70vw;
   }
 }
+.spotify-player {
+  position: fixed;
+  margin: 0 auto;
+  height: 20vh;
+  width: 25%;
+  right: 50%;
+  bottom: 2vh;
+  z-index: 5;
+  transform: translateX(50%);
+}
+
 @keyframes FadeInLeft {
   0% {
     opacity: 0;

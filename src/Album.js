@@ -76,10 +76,17 @@ const Album = ({ album, select, deselect, getMap }) => {
                 <td className="table--title">Description:</td>
               </tr>
             )}
+            
           </tbody>
         </table>
 
         <p className="description">{album.description}</p>
+
+        <div className="spotify-button" data-spotify-id="spotify:album:22PkV1Le9P3X4RY4xtmK0q">
+              <p> Play with Spotify </p>
+              <img src="./img/icons/spotify.png" alt="Spotify Logo" title="Play with Spotify"></img>
+            </div>
+
         {album.winner && (
           <p className="winner winner-desktop"> 
             <img src="./img/icons/trophy.png" className="trophy" alt="Trophy"></img>

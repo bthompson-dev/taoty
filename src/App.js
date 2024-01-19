@@ -4,7 +4,6 @@ import { useEffect, useState, useRef } from "react";
 import { getAll, getGenres, getYears } from "./services/albums";
 
 function App() {
-
   // STATE
   const [albums, setAlbums] = useState(null);
   const [genres, setGenres] = useState(null);
@@ -14,6 +13,7 @@ function App() {
   const [selectedGenre, setSelectedGenre] = useState("all");
   const [resetVisible, setResetVisible] = useState(false);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
+  const [spotifyAlbum, setSpotifyAlbum] = useState(null);
 
   // REFS
   const sidebar = useRef(null);
@@ -24,6 +24,8 @@ function App() {
 
   // Map of refs to individual albums
   const albumsMap = useRef(null);
+
+  // useEFFECTS
 
   // Get list of primary genres and years from the database
 
@@ -87,22 +89,55 @@ function App() {
     }
   }, [resetVisible, selectedYear, selectedGenre, showWinners]);
 
+  // Create Spotify player
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.setAttribute("src", "https://open.spotify.com/embed/iframe-api/v1");
+    script.setAttribute("async", "");
+    document.head.appendChild(script);
+
+    window.onSpotifyIframeApiReady = (IFrameAPI) => {
+
+      const element = document.getElementById("embed-iframe");
+
+      const options = {
+        height: "200px",
+        width: "400px",
+      };
+
+      const callback = (EmbedController) => {
+
+        setTimeout(() => {
+          const buttons = document.querySelectorAll(".spotify-button");
+
+          buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+              EmbedController.loadUri(button.dataset.spotifyId);
+            });
+          });
+        }, 500);
+      };
+
+      IFrameAPI.createController(element, options, callback);
+    };
+  }, []);
+
 
   // Functions to select and deselect albums
 
   const select = (id) => {
-
     if (selectedAlbum) {
-      selectedAlbum.classList.remove("selected")
+      selectedAlbum.classList.remove("selected");
     }
 
     const map = getMap();
     const album = map.get(id);
     album.classList.add("selected");
-    album.scrollIntoView({behavior: "smooth", block: "start"});
+    album.scrollIntoView({ behavior: "smooth", block: "start" });
     setSelectedAlbum(album);
     mobileIcons.current.classList.add("fade");
-  }
+  };
 
   const deselect = (id) => {
     const map = getMap();
@@ -111,16 +146,15 @@ function App() {
     album.scrollIntoView();
     setSelectedAlbum(null);
     mobileIcons.current.classList.remove("fade");
-  }
+  };
 
   // Creating a map within the albumsMap ref if one doesn't exist
   const getMap = () => {
-    if(!albumsMap.current) {
+    if (!albumsMap.current) {
       albumsMap.current = new Map();
     }
     return albumsMap.current;
-  }
-
+  };
 
   // Function to create title
 
@@ -180,22 +214,21 @@ function App() {
   return (
     <>
       <div className="container">
-        
         <div className="header">
           <div className="header__mobile-icons" ref={mobileIcons}>
-          <img
-            className="header__menu"
-            src="./img/icons/hamburger.png"
-            onClick={showMenu}
-            alt="menu"
-          ></img>
-          <img
-            className="header__undo"
-            src="./img/icons/undo-white.png"
-            alt="undo"
-            ref={resetMobile}
-            onClick={reset}
-          ></img>
+            <img
+              className="header__menu"
+              src="./img/icons/hamburger.png"
+              onClick={showMenu}
+              alt="menu"
+            ></img>
+            <img
+              className="header__undo"
+              src="./img/icons/undo-white.png"
+              alt="undo"
+              ref={resetMobile}
+              onClick={reset}
+            ></img>
           </div>
           <h1>TAOTY</h1>
         </div>
@@ -280,10 +313,18 @@ function App() {
 
           <div className="results__grid">
             {albums && (
-              <AlbumList albums={albums} select={select} deselect={deselect} getMap={getMap} />
+              <AlbumList
+                albums={albums}
+                select={select}
+                deselect={deselect}
+                getMap={getMap}
+              />
             )}
           </div>
         </div>
+      </div>
+      <div className="spotify-player">
+        <div id="embed-iframe"></div>
       </div>
     </>
   );
