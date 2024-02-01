@@ -1,9 +1,4 @@
-@font-face {
-  font-family: "Ubuntu-web";
-  font-style: normal;
-  font-weight: 300, 400, 700;
-  src: url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
 
 *,
 *::before,
@@ -16,7 +11,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px
-  font-family: "Ubuntu-web", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 @media (max-width: 800px) {
@@ -25,7 +20,7 @@ html {
   }
 }
 
-.container {
+.page-container {
   display: grid;
   grid-template-columns: 15rem 1fr;
   grid-template-rows: 8rem 1fr;
@@ -46,17 +41,28 @@ html {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 4rem;
   font-size: 1.5rem;
   z-index: 3;
 
-  &__menu {
+  .icons-group {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__mobile-icons {
     display: none;
   }
 
-  &__undo {
-    display: none;
+  &__spotify-login {
+    display: flex;
+    align-items: center;
+    height: 8rem;
+
+    &--logo {
+      height: 50%;
+    }
   }
 }
 
@@ -76,30 +82,30 @@ html {
       &.fade {
         opacity: 0.5;
       }
-    }
 
-    &__menu {
-      display: block;
-      height: 4.5rem;
-      width: 4.5rem;
-      cursor: pointer;
-      transition: all 0.5s;
-    }
+      &--menu {
+        display: block;
+        height: 4.5rem;
+        width: 4.5rem;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
 
-    &__undo {
-      display: block;
-      height: 3.5rem;
-      width: 3.5rem;
-      position: absolute;
-      visibility: hidden;
-      opacity: 0;
-      transition: all 1.5s ease-out;
-      cursor: pointer;
+      &--undo {
+        display: block;
+        height: 3.5rem;
+        width: 3.5rem;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1.5s ease-out;
+        cursor: pointer;
 
-      &.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(6rem);
+        &.visible {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(6rem);
+        }
       }
     }
   }
@@ -403,7 +409,7 @@ html {
               margin-left: 2rem;
             }
 
-            .spotify-button {
+            .spotify-button, .spotify-link {
               display: flex;
               align-items: center;
               justify-content: space-around;
@@ -427,12 +433,15 @@ html {
                 transform: translateY(-0.1rem);
                 box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.2);
               }
-
             }
 
+            .spotify-link {
+              display: none;
+              text-decoration: none;
+              margin: 0 auto 4rem auto;
+            }
           }
         }
-
       }
     }
   }
@@ -535,6 +544,14 @@ html {
               .winner-desktop {
                 display: none;
               }
+
+              .spotify-button {
+                display: none;
+              }
+
+              .spotify-link {
+                display: flex;
+              }
             }
           }
         }
@@ -557,14 +574,79 @@ html {
 // Spotify Player
 
 .spotify-player {
-   position: fixed;
-   margin: 0 auto;
-   height: 20vh;
-   width: 25%;
-   right: 50%;
-   bottom: 2vh;
-   z-index: 5;
-   transform: translateX(50%);
+  position: fixed;
+  height: 20rem;
+  width: 40rem;
+  right: 50%;
+  bottom: 0;
+  z-index: 5;
+  transition: all 1.5s ease-in;
+  transition-delay: 0s;
+  transform: translateX(50%) translateY(40rem);
+
+  .container {
+    position: relative;
+  }
+
+  &__close {
+    --size: 3.5rem;
+    position: absolute;
+    bottom: 1rem;
+    left: calc(50% - 1.5rem);
+    height: var(--size);
+    width: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &--cross {
+      position: relative;
+      color: black;
+      opacity: 1;
+      bottom: 1rem;
+      height: var(--size);
+      font-size: var(--size);
+      user-select: none;
+    }
+
+    &:hover {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);;
+    }
+
+    &:active {
+      outline: none;
+      transform: translateY(-0.05rem);
+      box-shadow: 0 0.5rem 0.7rem rgba(black, 0.25);
+    }
+
+  }
+
+  &.visible {
+    display: block;
+    transform: translateX(50%) translateY(0);
+    transition: all 1s ease-out;
+    transition-delay: 1s;
+  }
+
+}
+
+@media (max-width: 800px) {
+    .spotify-player {
+      height: 14rem;
+      width: 37.5rem;
+
+      &__close {
+        --size: 3rem;
+        bottom: -0.5rem;
+      }
+
+    }  
 }
 
 // Animations
@@ -604,7 +686,6 @@ html {
     transform: scale(1);
   }
 }
-
 
 // Firework
 

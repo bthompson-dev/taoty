@@ -2,6 +2,7 @@ import "./App.css";
 import AlbumList from "./AlbumList";
 import { useEffect, useState, useRef } from "react";
 import { getAll, getGenres, getYears } from "./services/albums";
+import spotifyLogin from "./services/spotify";
 
 function App() {
   // STATE
@@ -13,7 +14,6 @@ function App() {
   const [selectedGenre, setSelectedGenre] = useState("all");
   const [resetVisible, setResetVisible] = useState(false);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
-  const [spotifyAlbum, setSpotifyAlbum] = useState(null);
 
   // REFS
   const sidebar = useRef(null);
@@ -21,9 +21,17 @@ function App() {
   const resetDesktop = useRef(null);
   const resetMobile = useRef(null);
   const results = useRef(null);
+  const spotifyPlayer = useRef(null);
+  const spotifyPlayerClose = useRef(null);
 
   // Map of refs to individual albums
   const albumsMap = useRef(null);
+
+  // Check if layout is mobile
+
+  const isMobile = window.matchMedia(
+    "only screen and (max-width: 550px)"
+  ).matches;
 
   // useEFFECTS
 
@@ -92,37 +100,63 @@ function App() {
   // Create Spotify player
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.setAttribute("src", "https://open.spotify.com/embed/iframe-api/v1");
-    script.setAttribute("async", "");
-    document.head.appendChild(script);
+    if (!isMobile) {
+      const script = document.createElement("script");
+      script.setAttribute(
+        "src",
+        "https://open.spotify.com/embed/iframe-api/v1"
+      );
+      script.setAttribute("async", "");
+      document.head.appendChild(script);
 
-    window.onSpotifyIframeApiReady = (IFrameAPI) => {
+      window.onSpotifyIframeApiReady = (IFrameAPI) => {
+        const element = document.getElementById("embed-iframe");
 
-      const element = document.getElementById("embed-iframe");
+        const viewportWidth = window.innerWidth;
 
-      const options = {
-        height: "200px",
-        width: "400px",
-      };
+        let options = {
+          height: "200px",
+          width: "400px",
+        };
 
-      const callback = (EmbedController) => {
+        if (viewportWidth < 805) {
+          options = {
+            height: "100px",
+            width: "300px",
+          }
+        }
 
-        setTimeout(() => {
-          const buttons = document.querySelectorAll(".spotify-button");
+        const callback = (EmbedController) => {
 
-          buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-              EmbedController.loadUri(button.dataset.spotifyId);
+          // Wait for the DOM to load before looking for buttons
+          setTimeout(() => {
+            const buttons = document.querySelectorAll(".spotify-button");
+
+            buttons.forEach((button) => {
+              button.addEventListener("click", () => {
+                spotifyLogin();
+
+                EmbedController.loadUri(button.dataset.spotifyId);
+
+                spotifyPlayer.current.classList.add("visible");
+
+                setTimeout(() => {
+                  EmbedController.play();
+                }, 500);
+              });
             });
-          });
-        }, 500);
+
+            spotifyPlayerClose.current.addEventListener("click", () => {
+              spotifyPlayer.current.classList.remove("visible");
+              EmbedController.pause();
+            });
+          }, 500);
+        };
+
+        IFrameAPI.createController(element, options, callback);
       };
-
-      IFrameAPI.createController(element, options, callback);
-    };
-  }, []);
-
+    }
+  }, [isMobile]);
 
   // Functions to select and deselect albums
 
@@ -134,7 +168,7 @@ function App() {
     const map = getMap();
     const album = map.get(id);
     album.classList.add("selected");
-    album.scrollIntoView({ behavior: "smooth", block: "start" });
+    album.scrollIntoView({ behavior: "instant", block: "start" });
     setSelectedAlbum(album);
     mobileIcons.current.classList.add("fade");
   };
@@ -213,23 +247,26 @@ function App() {
 
   return (
     <>
-      <div className="container">
+      <div className="page-container">
         <div className="header">
-          <div className="header__mobile-icons" ref={mobileIcons}>
-            <img
-              className="header__menu"
-              src="./img/icons/hamburger.png"
-              onClick={showMenu}
-              alt="menu"
-            ></img>
-            <img
-              className="header__undo"
-              src="./img/icons/undo-white.png"
-              alt="undo"
-              ref={resetMobile}
-              onClick={reset}
-            ></img>
+          <div className="icons-group">
+            <div className="header__mobile-icons" ref={mobileIcons}>
+              <img
+                className="header__mobile-icons--menu"
+                src="./img/icons/hamburger.png"
+                onClick={showMenu}
+                alt="menu"
+              ></img>
+              <img
+                className="header__mobile-icons--undo"
+                src="./img/icons/undo-white.png"
+                alt="undo"
+                ref={resetMobile}
+                onClick={reset}
+              ></img>
+            </div>
           </div>
+
           <h1>TAOTY</h1>
         </div>
 
@@ -296,7 +333,6 @@ function App() {
             onClick={() => reset()}
             ref={resetDesktop}
           >
-            {" "}
             <span className="sidebar__reset--text">Reset</span>
             <img
               src="./img/icons/undo.png"
@@ -323,8 +359,19 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="spotify-player">
-        <div id="embed-iframe"></div>
+
+      <div className="spotify-player" ref={spotifyPlayer}>
+        <div className="container">
+          <div id="embed-iframe"></div>
+          <span className="spotify-player__close">
+            <span
+              className="spotify-player__close--cross"
+              ref={spotifyPlayerClose}
+            >
+              &times;
+            </span>
+          </span>
+        </div>
       </div>
     </>
   );
