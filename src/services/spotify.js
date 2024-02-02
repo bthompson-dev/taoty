@@ -1,6 +1,4 @@
 const spotifyLogin = async () => {
-  console.log("spotifyLogin called");
-
   const clientId = "f26dbd3c36bb4fad814092f47282ddc7";
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
@@ -13,14 +11,12 @@ const spotifyLogin = async () => {
   if (verified) {
     let verifiedObject = JSON.parse(verified);
     expired = Date.now() - verifiedObject.timestamp > 2629746000;
-    console.log("expired", expired);
   }
-
 
   if (expired || (!verified && !code)) {
     redirectToAuthCodeFlow(clientId);
-  } 
-  
+  }
+
   // else {
   //   // const accessToken = await getAccessToken(clientId, code);
   //   // const profile = await fetchProfile(accessToken);
@@ -37,8 +33,6 @@ export async function redirectToAuthCodeFlow(clientId) {
     verifier: verifier,
     timestamp: timestamp,
   };
-
-  console.log("object", object);
 
   localStorage.setItem("verifier", JSON.stringify(object));
 
@@ -61,8 +55,6 @@ function generateCodeVerifier(length) {
   for (let i = 0; i < length; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }
-
-  console.log("text", text);
 
   return text;
 }
