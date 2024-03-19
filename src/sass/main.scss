@@ -423,6 +423,8 @@ html {
               border-radius: 3rem;
               cursor: pointer;
               transition: all 0.5s;
+              position: relative;
+              z-index: 1;
 
               & img {
                 height: 3rem;

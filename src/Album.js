@@ -101,7 +101,7 @@ const Album = ({ album, select, deselect, getMap }) => {
             </div>
 
             <a href={album.spotify_uri} className="spotify-link">
-                <p> Play in Spotify </p>
+                <p> Open in Spotify </p>
                 <img
                   src="./img/icons/spotify.png"
                   alt="Spotify Logo"

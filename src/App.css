@@ -359,6 +359,8 @@ html {
   border-radius: 3rem;
   cursor: pointer;
   transition: all 0.5s;
+  position: relative;
+  z-index: 1;
 }
 .results__album.selected .results__album--extra-info .spotify-button img, .results__album.selected .results__album--extra-info .spotify-link img {
   height: 3rem;
